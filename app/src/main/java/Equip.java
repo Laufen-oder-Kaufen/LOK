@@ -11,9 +11,6 @@ public class Equip extends Actor{
         this.slot = slot;
     }
 
-    public Equip() {
-    }
-
     public int getSlot() {
         return slot;
     }
