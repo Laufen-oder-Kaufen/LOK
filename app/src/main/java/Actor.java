@@ -1,5 +1,5 @@
 /***
- * The abstract class Actor represents either monsters or heroes
+ * The abstract class Actor represents either monsters or heroes or equip
  *
  * id
  * name
