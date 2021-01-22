@@ -14,6 +14,26 @@
  * mdf: magic defense value
  * agi: agility / speed value
  * luk: luck value
+ *
+ * types of heroes:
+ *  warrior - strength damage and survivability
+ *  mage - magical damage and AoE
+ *  healer - healing and buffs
+ *  rogue - strength damage and utility
+ * types of monsters:
+ *  [currently not necessary]
+ * types of equip:
+ *  armor plate - armor pieces for warrior
+ *  armor cloth - armor pieces for mage
+ *  armor chain - armor pieces for healer
+ *  armor leather - armor pieces for rogue
+ *  armor common - armor pieces for everyone
+ *  weapon heavy - weapons for warrior
+ *  weapon arcane - weapons for mage
+ *  weapon divine - weapons for healer
+ *  weapon light - weapons for rogue
+ *  weapon common - weapons for everyone
+ *  accessories and talismans are equippable by everyone
  */
 abstract class Actor {
     private int id;
