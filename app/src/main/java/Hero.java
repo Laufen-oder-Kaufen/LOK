@@ -16,10 +16,10 @@
  * getEquipmentModifiers() returns the added modifiers of all equipment
  */
 public class Hero extends Actor{
-    private String skill;
+    private Skill skill;
     private Equip[] equipment;
 
-    public String getSkill() {
+    public Skill getSkill() {
         return skill;
     }
 
@@ -27,7 +27,7 @@ public class Hero extends Actor{
         return equipment;
     }
 
-    public void setSkill(String skill) {
+    public void setSkill(Skill skill) {
         this.skill = skill;
     }
 
