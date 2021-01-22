@@ -41,14 +41,14 @@ abstract class Actor {
     private String image;
     private String icon;
     private String type;
-    private int maxHP;
-    private int currHP;
-    private int str;
-    private int def;
-    private int mag;
-    private int mdf;
-    private int agi;
-    private int luk;
+    private int maxHP = 0;
+    private int currHP = 0;
+    private int str = 0;
+    private int def = 0;
+    private int mag = 0;
+    private int mdf = 0;
+    private int agi = 0;
+    private int luk = 0;
 
     public Actor() {
     }
