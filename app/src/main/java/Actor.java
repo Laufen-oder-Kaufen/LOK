@@ -48,4 +48,56 @@ abstract class Actor {
         this.agi = agi;
         this.luk = luk;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public int getMaxHP() {
+        return maxHP;
+    }
+
+    public int getCurrHP() {
+        return currHP;
+    }
+
+    public int getStr() {
+        return str;
+    }
+
+    public int getDef() {
+        return def;
+    }
+
+    public int getMag() {
+        return mag;
+    }
+
+    public int getMdf() {
+        return mdf;
+    }
+
+    public int getAgi() {
+        return agi;
+    }
+
+    public int getLuk() {
+        return luk;
+    }
 }
