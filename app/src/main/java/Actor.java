@@ -35,11 +35,7 @@
  *  weapon common - weapons for everyone
  *  accessories and talismans are equippable by everyone
  */
-abstract class Actor {
-    private int id;
-    private String name;
-    private String image;
-    private String icon;
+abstract class Actor extends MenuActor {
     private String type;
     private int maxHP = 0;
     private int currHP = 0;
@@ -50,14 +46,8 @@ abstract class Actor {
     private int agi = 0;
     private int luk = 0;
 
-    public Actor() {
-    }
-
     public Actor(int id, String name, String image, String icon, String type, int maxHP, int currHP, int str, int def, int mag, int mdf, int agi, int luk) {
-        this.id = id;
-        this.name = name;
-        this.image = image;
-        this.icon = icon;
+        super(id, name, image, icon);
         this.type = type;
         this.maxHP = maxHP;
         this.currHP = currHP;
@@ -67,22 +57,6 @@ abstract class Actor {
         this.mdf = mdf;
         this.agi = agi;
         this.luk = luk;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public String getIcon() {
-        return icon;
     }
 
     public String getType() {

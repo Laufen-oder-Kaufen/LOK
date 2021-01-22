@@ -6,31 +6,14 @@
  * icon
  * cd: cool down time of the skill
  */
-abstract class Skill {
-    private int id;
-    private int name;
-    private int icon;
+abstract class Skill extends MenuActor{
     private int cd;
 
     abstract void skillEffect();
 
-    public Skill(int id, int name, int icon, int cd) {
-        this.id = id;
-        this.name = name;
-        this.icon = icon;
+    public Skill(int id, String name, String image, String icon, int cd) {
+        super(id, name, image, icon);
         this.cd = cd;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public int getName() {
-        return name;
-    }
-
-    public int getIcon() {
-        return icon;
     }
 
     public int getCd() {
