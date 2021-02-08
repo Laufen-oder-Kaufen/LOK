@@ -1,3 +1,6 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 /***
  * the public class Hero represents every hero
  *
@@ -18,6 +21,15 @@
 public class Hero extends Actor{
     private Skill skill;
     private Equip[] equipment;
+    ArrayList<Equip> itemList = new ArrayList<>();
+
+    private void equipItem(Equip item) {
+        itemList.add(item);
+    }
+
+    private void unequipItem(Equip equip) {
+        itemList.remove(equip);
+    }
 
     public Skill getSkill() {
         return skill;
