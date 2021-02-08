@@ -34,6 +34,7 @@
  *  weapon light - weapons for rogue
  *  weapon common - weapons for everyone
  *  accessories and talismans are equippable by everyone
+ *  test
  */
 abstract class Actor extends MenuActor {
     private String type;
