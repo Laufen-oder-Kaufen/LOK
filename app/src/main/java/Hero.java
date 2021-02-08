@@ -17,7 +17,7 @@
  */
 public class Hero extends Actor{
     private Skill skill;
-    private Equip[] equipmente; //test
+    private Equip[] equipment;
 
     public Skill getSkill() {
         return skill;
