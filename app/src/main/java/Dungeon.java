@@ -16,8 +16,7 @@ abstract class Dungeon extends MenuActor{
     private int minEncounterSize = 3;
     private int maxEncounterSize = 6;
 
-    public Dungeon(int id, String name, String image, String icon) {
-        super(id, name, image, icon);
+    public Dungeon() {
     }
 
     public Monster[] getMonsters() {

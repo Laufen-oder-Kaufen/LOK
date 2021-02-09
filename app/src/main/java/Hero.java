@@ -31,8 +31,12 @@ public class Hero extends Actor{
         this.skill = skill;
     }
 
-    public void setEquipment(int i, Equip equip) {
+    public void setEquipmentSlot(int i, Equip equip) {
         this.equipment[i] = equip;
+    }
+
+    public void setEquipment(Equip[] equipment) {
+        this.equipment = equipment;
     }
 
     public int[] getEquipmentModifiers(){
@@ -59,7 +63,6 @@ public class Hero extends Actor{
         return result;
     }
 
-    public Hero(int id, String name, String image, String icon, String type, int maxHP, int currHP, int str, int def, int mag, int mdf, int agi, int luk) {
-        super(id, name, image, icon, type, maxHP, currHP, str, def, mag, mdf, agi, luk);
+    public Hero() {
     }
 }

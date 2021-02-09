@@ -9,8 +9,7 @@ abstract class ActiveItem extends MenuActor{
     private int maxAmmount;
     abstract void effect();
 
-    public ActiveItem(int id, String name, String image, String icon) {
-        super(id, name, image, icon);
+    public ActiveItem() {
     }
 
     public int getMaxAmmount() {

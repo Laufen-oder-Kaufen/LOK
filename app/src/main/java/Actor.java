@@ -46,17 +46,7 @@ abstract class Actor extends MenuActor {
     private int agi = 0;
     private int luk = 0;
 
-    public Actor(int id, String name, String image, String icon, String type, int maxHP, int currHP, int str, int def, int mag, int mdf, int agi, int luk) {
-        super(id, name, image, icon);
-        this.type = type;
-        this.maxHP = maxHP;
-        this.currHP = currHP;
-        this.str = str;
-        this.def = def;
-        this.mag = mag;
-        this.mdf = mdf;
-        this.agi = agi;
-        this.luk = luk;
+    public Actor() {
     }
 
     public String getType() {
@@ -93,5 +83,41 @@ abstract class Actor extends MenuActor {
 
     public int getLuk() {
         return luk;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setMaxHP(int maxHP) {
+        this.maxHP = maxHP;
+    }
+
+    public void setCurrHP(int currHP) {
+        this.currHP = currHP;
+    }
+
+    public void setStr(int str) {
+        this.str = str;
+    }
+
+    public void setDef(int def) {
+        this.def = def;
+    }
+
+    public void setMag(int mag) {
+        this.mag = mag;
+    }
+
+    public void setMdf(int mdf) {
+        this.mdf = mdf;
+    }
+
+    public void setAgi(int agi) {
+        this.agi = agi;
+    }
+
+    public void setLuk(int luk) {
+        this.luk = luk;
     }
 }
