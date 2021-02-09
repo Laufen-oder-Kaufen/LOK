@@ -16,7 +16,7 @@ import java.util.ArrayList;
  *  8: Talisman
  *  9: Accessory
  */
-public class Hero extends Actor{
+public class Hero extends Actor {
     private Skill skill;
     private Equip[] equipment;
 
@@ -27,16 +27,15 @@ public class Hero extends Actor{
      * @return Equip if the function had to unequip an already existent equip
      */
     public Equip equip(Equip equip) {
-        if (checkCanEquip(equip)){
-            if (equipment[equip.getSlot()] == null){
+        if (checkCanEquip(equip)) {
+            if (equipment[equip.getSlot()] == null) {
                 equipment[equip.getSlot()] = equip;
-            }else{
+            } else {
                 Equip e = unequip(equip.getSlot());
                 equipment[equip.getSlot()] = equip;
                 return e;
             }
-        }
-        else {
+        } else {
             System.out.println("Gegenstand kann von Held nicht ausgerüstet werden");
         }
         return null;
@@ -69,19 +68,32 @@ public class Hero extends Actor{
      * @param equip
      * @return
      */
-    private boolean checkCanEquip(Equip equip){
+    private boolean checkCanEquip(Equip equip) {
         String etype = equip.getType();
-        if (etype.equals("accessory") || etype.equals("talisman") || etype.equals("common") || etype.equals("physical")){ return true; }
-        else {
+        if (etype.equals("accessory") || etype.equals("talisman") || etype.equals("common") || etype.equals("physical")) {
+            return true;
+        } else {
             switch (this.getType()) {
                 case "warrior":
-                    if (etype.equals("plate") || etype.equals("heavy")){return true;};
+                    if (etype.equals("plate") || etype.equals("heavy")) {
+                        return true;
+                    }
+                    ;
                 case "mage":
-                    if (etype.equals("cloth") || etype.equals("arcane")){return true;};
+                    if (etype.equals("cloth") || etype.equals("arcane")) {
+                        return true;
+                    }
+                    ;
                 case "healer":
-                    if (etype.equals("chain") || etype.equals("divine")){return true;};
+                    if (etype.equals("chain") || etype.equals("divine")) {
+                        return true;
+                    }
+                    ;
                 case "rogue":
-                    if (etype.equals("leather") || etype.equals("light")){return true;};
+                    if (etype.equals("leather") || etype.equals("light")) {
+                        return true;
+                    }
+                    ;
             }
         }
         return false;
@@ -95,23 +107,26 @@ public class Hero extends Actor{
         return equipment;
     }
 
-    public void setSkill(Skill skill) {
+    public Hero setSkill(Skill skill) {
         this.skill = skill;
+        return this;
     }
 
-    public void setEquipmentSlot(int i, Equip equip) {
-        this.equipment[i] = equip;
-    }
-
-    public void setEquipment(Equip[] equipment) {
+    public Hero setEquipment(Equip[] equipment) {
         this.equipment = equipment;
+        return this;
+    }
+
+    public Hero setEquipmentSlot(int slot, Equip equip) {
+        this.equipment[slot] = equip;
+        return this;
     }
 
     /***
      * adds up all modifiers of equipment of all slots
      * @return
      */
-    public int[] getEquipmentModifiers(){
+    public int[] getEquipmentModifiers() {
         int maxHP;
         int currHP;
         int str;
@@ -121,8 +136,8 @@ public class Hero extends Actor{
         int agi;
         int luk;
         int[] result = {0, 0, 0, 0, 0, 0, 0, 0};
-        for (Equip e:
-             this.equipment) {
+        for (Equip e :
+                this.equipment) {
             result[1] += e.getMaxHP();
             result[2] += e.getCurrHP();
             result[3] += e.getStr();

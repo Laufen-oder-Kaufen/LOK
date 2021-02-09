@@ -5,8 +5,9 @@
  *
  * effect(): placeholder for item effect
  */
-abstract class ActiveItem extends MenuActor{
+abstract class ActiveItem extends MenuActor {
     private int maxAmmount;
+
     abstract void effect();
 
     public ActiveItem() {
@@ -16,7 +17,8 @@ abstract class ActiveItem extends MenuActor{
         return maxAmmount;
     }
 
-    public void setMaxAmmount(int maxAmmount) {
+    public ActiveItem setMaxAmmount(int maxAmmount) {
         this.maxAmmount = maxAmmount;
+        return this;
     }
 }

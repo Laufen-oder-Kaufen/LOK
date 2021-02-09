@@ -14,7 +14,7 @@ import java.util.Locale;
  *  *  8: Talisman
  *  *  9: Accessory
  */
-public class Equip extends Actor{
+public class Equip extends Actor {
     private int slot = 0;
 
     public Equip() {
@@ -24,13 +24,14 @@ public class Equip extends Actor{
         return slot;
     }
 
-    public void setSlot(int slot) {
+    public Equip setSlot(int slot) {
         this.slot = slot;
+        return this;
     }
 
-    public void setSlot(String slot){
+    public void setSlot(String slot) {
         slot = slot.toLowerCase(Locale.ROOT);
-        switch(slot) {
+        switch (slot) {
             case "weapon mainhand":
                 this.slot = 1;
                 break;

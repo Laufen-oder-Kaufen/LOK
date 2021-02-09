@@ -3,15 +3,16 @@
  *
  * exp
  */
-public class Monster extends Actor{
+public class Monster extends Actor {
     private int exp;
 
     public int getExp() {
         return exp;
     }
 
-    public void setExp(int exp) {
+    public Monster setExp(int exp) {
         this.exp = exp;
+        return this;
     }
 
     public Monster() {

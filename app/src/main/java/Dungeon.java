@@ -9,7 +9,7 @@ import java.util.Vector;
  * minEncounterSize: the smallest number of monsters in an encounter (included)
  * maxEncounterSite: the highest number of monsters in an encounter (included)
  */
-abstract class Dungeon extends MenuActor{
+abstract class Dungeon extends MenuActor {
     private Monster[] monsters;
     private Equip[] equips;
     private int stagesCount = 1;
@@ -39,24 +39,29 @@ abstract class Dungeon extends MenuActor{
         return maxEncounterSize;
     }
 
-    public void setMonsters(Monster[] monsters) {
+    public Dungeon setMonsters(Monster[] monsters) {
         this.monsters = monsters;
+        return this;
     }
 
-    public void setEquips(Equip[] equips) {
+    public Dungeon setEquips(Equip[] equips) {
         this.equips = equips;
+        return this;
     }
 
-    public void setStagesCount(int stagesCount) {
+    public Dungeon setStagesCount(int stagesCount) {
         this.stagesCount = stagesCount;
+        return this;
     }
 
-    public void setMinEncounterSize(int minEncounterSize) {
+    public Dungeon setMinEncounterSize(int minEncounterSize) {
         this.minEncounterSize = minEncounterSize;
+        return this;
     }
 
-    public void setMaxEncounterSize(int maxEncounterSize) {
+    public Dungeon setMaxEncounterSize(int maxEncounterSize) {
         this.maxEncounterSize = maxEncounterSize;
+        return this;
     }
 
     /***
@@ -66,7 +71,7 @@ abstract class Dungeon extends MenuActor{
      * @return random int value
      */
     private int getRndInteger(int min, int max) {
-        return (int)(Math.random() * (max - min + 1) ) + min;
+        return (int) (Math.random() * (max - min + 1)) + min;
     }
 
     /***
@@ -76,22 +81,22 @@ abstract class Dungeon extends MenuActor{
      * @param table object table
      * @return randomly sized list of random objects from table
      */
-    protected Vector randomRoll(int minSize, int maxSize, Object[] table ){
+    protected Vector randomRoll(int minSize, int maxSize, Object[] table) {
         Vector res = new Vector();
         int monsterAmmount = getRndInteger(minSize, maxSize);
         int rmon;
-        for (int i = 0; i <= monsterAmmount; i++){
+        for (int i = 0; i <= monsterAmmount; i++) {
             rmon = getRndInteger(0, table.length);
             res.add(table[rmon]);
         }
         return res;
     }
 
-    public Vector<Monster> randomEncounter(){
+    public Vector<Monster> randomEncounter() {
         return randomRoll(minEncounterSize, maxEncounterSize, monsters);
     }
 
-    public Vector<Equip> rollLoot(int minSize, int maxSize){
+    public Vector<Equip> rollLoot(int minSize, int maxSize) {
         return randomRoll(minSize, maxSize, equips);
     }
 }

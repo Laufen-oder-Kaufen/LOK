@@ -87,41 +87,49 @@ abstract class Actor extends MenuActor {
         return luk;
     }
 
-    public void setType(String type){
-        type = type.toLowerCase(Locale.ROOT);
+    public Actor setType(String type) {
         this.type = type;
+        return this;
     }
 
-    public void setMaxHP(int maxHP) {
+    public Actor setMaxHP(int maxHP) {
         this.maxHP = maxHP;
+        return this;
     }
 
-    public void setCurrHP(int currHP) {
+    public Actor setCurrHP(int currHP) {
         this.currHP = currHP;
+        return this;
     }
 
-    public void setStr(int str) {
+    public Actor setStr(int str) {
         this.str = str;
+        return this;
     }
 
-    public void setDef(int def) {
+    public Actor setDef(int def) {
         this.def = def;
+        return this;
     }
 
-    public void setMag(int mag) {
+    public Actor setMag(int mag) {
         this.mag = mag;
+        return this;
     }
 
-    public void setMdf(int mdf) {
+    public Actor setMdf(int mdf) {
         this.mdf = mdf;
+        return this;
     }
 
-    public void setAgi(int agi) {
+    public Actor setAgi(int agi) {
         this.agi = agi;
+        return this;
     }
 
-    public void setLuk(int luk) {
+    public Actor setLuk(int luk) {
         this.luk = luk;
+        return this;
     }
 
     /***
@@ -134,14 +142,14 @@ abstract class Actor extends MenuActor {
      * @param agi
      * @param luk
      */
-    public void setStatBlock(int maxHP, int str, int def, int mag, int mdf, int agi, int luk){
-       this.maxHP = maxHP;
-       this.currHP = this.maxHP;
-       this.str = str;
-       this.def = def;
-       this.mag = mag;
-       this.mdf = mdf;
-       this.agi = agi;
-       this.luk = luk;
+    public void setStatBlock(int maxHP, int str, int def, int mag, int mdf, int agi, int luk) {
+        this.maxHP = maxHP;
+        this.currHP = this.maxHP;
+        this.str = str;
+        this.def = def;
+        this.mag = mag;
+        this.mdf = mdf;
+        this.agi = agi;
+        this.luk = luk;
     }
 }

@@ -6,7 +6,7 @@
  * icon
  * cd: cool down time of the skill
  */
-abstract class Skill extends MenuActor{
+abstract class Skill extends MenuActor {
     private int cd;
 
     abstract void skillEffect();
@@ -18,7 +18,8 @@ abstract class Skill extends MenuActor{
         return cd;
     }
 
-    public void setCd(int cd) {
+    public Skill setCd(int cd) {
         this.cd = cd;
+        return this;
     }
 }

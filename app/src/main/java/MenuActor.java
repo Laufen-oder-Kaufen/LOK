@@ -36,15 +36,18 @@ abstract class MenuActor {
         return icon;
     }
 
-    public void setName(String name) {
+    public MenuActor setName(String name) {
         this.name = name;
+        return this;
     }
 
-    public void setImage(String image) {
+    public MenuActor setImage(String image) {
         this.image = image;
+        return this;
     }
 
-    public void setIcon(String icon) {
+    public MenuActor setIcon(String icon) {
         this.icon = icon;
+        return this;
     }
 }
