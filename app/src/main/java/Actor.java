@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 /***
  * The abstract class Actor represents either monsters or heroes or equip
  *
@@ -23,16 +25,16 @@
  * types of monsters:
  *  [currently not necessary]
  * types of equip:
- *  armor plate - armor pieces for warrior
- *  armor cloth - armor pieces for mage
- *  armor chain - armor pieces for healer
- *  armor leather - armor pieces for rogue
- *  armor common - armor pieces for everyone
- *  weapon heavy - weapons for warrior
- *  weapon arcane - weapons for mage
- *  weapon divine - weapons for healer
- *  weapon light - weapons for rogue
- *  weapon common - weapons for everyone
+ *  plate - armor pieces for warrior
+ *  cloth - armor pieces for mage
+ *  chain - armor pieces for healer
+ *  leather - armor pieces for rogue
+ *  common - armor pieces for everyone
+ *  heavy - weapons for warrior
+ *  arcane - weapons for mage
+ *  divine - weapons for healer
+ *  light - weapons for rogue
+ *  physical - weapons for everyone
  *  accessories and talismans are equippable by everyone
  */
 abstract class Actor extends MenuActor {
@@ -85,7 +87,8 @@ abstract class Actor extends MenuActor {
         return luk;
     }
 
-    public void setType(String type) {
+    public void setType(String type){
+        type = type.toLowerCase(Locale.ROOT);
         this.type = type;
     }
 
