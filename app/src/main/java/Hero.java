@@ -76,5 +76,6 @@ public class Hero extends Actor{
     }
 
     public Hero() {
+        equipment = new Equip[10];
     }
 }
