@@ -6,6 +6,9 @@
 public class Monster extends Actor {
     private int exp;
 
+    public Monster() {
+    }
+
     public int getExp() {
         return exp;
     }
@@ -13,8 +16,5 @@ public class Monster extends Actor {
     public Monster setExp(int exp) {
         this.exp = exp;
         return this;
-    }
-
-    public Monster() {
     }
 }

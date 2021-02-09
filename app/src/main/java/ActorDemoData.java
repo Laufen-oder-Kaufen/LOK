@@ -19,6 +19,50 @@ public class ActorDemoData {
     private Dungeon dungeon;
     private ActiveItem potion;
 
+    public ActorDemoData() {
+        h0 = new Hero();
+        h1 = new Hero();
+        h2 = new Hero();
+        h3 = new Hero();
+        m0 = new Monster();
+        m1 = new Monster();
+        m2 = new Monster();
+        e0 = new Equip();
+        e1 = new Equip();
+        e2 = new Equip();
+        demoSkill0 = new DemoSkill();
+        demoSkill1 = new Skill() {
+            @Override
+            void skillEffect() {
+                System.out.println("DemoSkill1 benutzt!");
+            }
+        };
+        demoSkill2 = new Skill() {
+            @Override
+            void skillEffect() {
+                System.out.println("DemoSkill2 benutzt!");
+            }
+        };
+        demoSkill3 = new Skill() {
+            @Override
+            void skillEffect() {
+                System.out.println("DemoSkill3 benutzt!");
+            }
+        };
+
+        dungeon = new Dungeon() {
+        };
+
+        potion = new ActiveItem() {
+            @Override
+            void effect() {
+                System.out.println("Potion wurde gebraucht!");
+            }
+        };
+
+        init();
+    }
+
     public Hero getH0() {
         return h0;
     }
@@ -81,50 +125,6 @@ public class ActorDemoData {
 
     public ActiveItem getPotion() {
         return potion;
-    }
-
-    public ActorDemoData() {
-        h0 = new Hero();
-        h1 = new Hero();
-        h2 = new Hero();
-        h3 = new Hero();
-        m0 = new Monster();
-        m1 = new Monster();
-        m2 = new Monster();
-        e0 = new Equip();
-        e1 = new Equip();
-        e2 = new Equip();
-        demoSkill0 = new DemoSkill();
-        demoSkill1 = new Skill() {
-            @Override
-            void skillEffect() {
-                System.out.println("DemoSkill1 benutzt!");
-            }
-        };
-        demoSkill2 = new Skill() {
-            @Override
-            void skillEffect() {
-                System.out.println("DemoSkill2 benutzt!");
-            }
-        };
-        demoSkill3 = new Skill() {
-            @Override
-            void skillEffect() {
-                System.out.println("DemoSkill3 benutzt!");
-            }
-        };
-
-        dungeon = new Dungeon() {
-        };
-
-        potion = new ActiveItem() {
-            @Override
-            void effect() {
-                System.out.println("Potion wurde gebraucht!");
-            }
-        };
-
-        init();
     }
 
     private void init() {

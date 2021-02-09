@@ -20,6 +20,11 @@ public class Hero extends Actor {
     private Skill skill;
     private Equip[] equipment;
 
+
+    public Hero() {
+        equipment = new Equip[10];
+        setType("warrior");
+    }
     /***
      * function to equip an item. Checks if Equip type is compatible, and if Equip exists on that slot, returns that
      * Equip
@@ -148,10 +153,5 @@ public class Hero extends Actor {
             result[8] += e.getLuk();
         }
         return result;
-    }
-
-    public Hero() {
-        equipment = new Equip[10];
-        setType("warrior");
     }
 }
