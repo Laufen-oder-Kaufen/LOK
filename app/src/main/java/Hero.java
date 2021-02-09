@@ -21,14 +21,40 @@ import java.util.ArrayList;
 public class Hero extends Actor{
     private Skill skill;
     private Equip[] equipment;
-    ArrayList<Equip> itemList = new ArrayList<>();
 
-    private void equipItem(Equip item) {
-        itemList.add(item);
+    private void equipItem(Equip equip) {
+        if (checkCanEquip(equip)){
+            equipment[equip.getSlot()] = equip;
+        }
+        else {
+            System.out.println("Gegenstand kann von Held nicht ausgerüstet werden");
+        }
     }
 
     private void unequipItem(Equip equip) {
-        itemList.remove(equip);
+        equipment[equip.getSlot()] = null;
+    }
+
+    private void unequipItem(int slot) {
+        equipment[slot] = null;
+    }
+
+    private boolean checkCanEquip(Equip equip){
+        String etype = equip.getType();
+        if (etype.equals("accessory") || etype.equals("talisman") || etype.equals("common") || etype.equals("physical")){ return true; }
+        else {
+            switch (this.getType()) {
+                case "warrior":
+                    if (etype.equals("plate") || etype.equals("heavy")){return true;};
+                case "mage":
+                    if (etype.equals("cloth") || etype.equals("arcane")){return true;};
+                case "healer":
+                    if (etype.equals("chain") || etype.equals("divine")){return true;};
+                case "rogue":
+                    if (etype.equals("leather") || etype.equals("light")){return true;};
+            }
+        }
+        return false;
     }
 
     public Skill getSkill() {
