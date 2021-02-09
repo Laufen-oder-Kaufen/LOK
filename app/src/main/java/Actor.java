@@ -120,4 +120,15 @@ abstract class Actor extends MenuActor {
     public void setLuk(int luk) {
         this.luk = luk;
     }
+
+    public void setStatBlock(int maxHP, int str, int def, int mag, int mdf, int agi, int luk){
+       this.maxHP = maxHP;
+       this.currHP = this.maxHP;
+       this.str = str;
+       this.def = def;
+       this.mag = mag;
+       this.mdf = mdf;
+       this.agi = agi;
+       this.luk = luk;
+    }
 }
