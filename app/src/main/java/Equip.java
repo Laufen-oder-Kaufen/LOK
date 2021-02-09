@@ -15,7 +15,7 @@ import java.util.Locale;
  *  *  9: Accessory
  */
 public class Equip extends Actor{
-    private int slot;
+    private int slot = 0;
 
     public Equip() {
     }

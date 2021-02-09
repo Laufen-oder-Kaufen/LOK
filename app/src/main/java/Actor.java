@@ -124,6 +124,16 @@ abstract class Actor extends MenuActor {
         this.luk = luk;
     }
 
+    /***
+     * function to set the entire stat block at once
+     * @param maxHP
+     * @param str
+     * @param def
+     * @param mag
+     * @param mdf
+     * @param agi
+     * @param luk
+     */
     public void setStatBlock(int maxHP, int str, int def, int mag, int mdf, int agi, int luk){
        this.maxHP = maxHP;
        this.currHP = this.maxHP;

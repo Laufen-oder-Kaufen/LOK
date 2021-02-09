@@ -1,3 +1,6 @@
+/***
+ * Class filled with suitable demo data for testing and presenting
+ */
 public class ActorDemoData {
     private Hero h0;
     private Hero h1;

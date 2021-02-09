@@ -15,30 +15,60 @@ import java.util.ArrayList;
  *  7: Feet
  *  8: Talisman
  *  9: Accessory
- *
- * getEquipmentModifiers() returns the added modifiers of all equipment
  */
 public class Hero extends Actor{
     private Skill skill;
     private Equip[] equipment;
 
-    private void equipItem(Equip equip) {
+    /***
+     * function to equip an item. Checks if Equip type is compatible, and if Equip exists on that slot, returns that
+     * Equip
+     * @param equip
+     * @return Equip if the function had to unequip an already existent equip
+     */
+    public Equip equip(Equip equip) {
         if (checkCanEquip(equip)){
-            equipment[equip.getSlot()] = equip;
+            if (equipment[equip.getSlot()] == null){
+                equipment[equip.getSlot()] = equip;
+            }else{
+                Equip e = unequip(equip.getSlot());
+                equipment[equip.getSlot()] = equip;
+                return e;
+            }
         }
         else {
             System.out.println("Gegenstand kann von Held nicht ausgerüstet werden");
         }
+        return null;
     }
 
-    private void unequipItem(Equip equip) {
+    /***
+     * unequips an equipment by Object
+     * @param equip
+     * @return the unequipped Item
+     */
+    public Equip unequip(Equip equip) {
+        Equip e = equipment[equip.getSlot()];
         equipment[equip.getSlot()] = null;
+        return e;
     }
 
-    private void unequipItem(int slot) {
+    /***
+     * unequips an equipment by slot
+     * @param slot
+     * @return the unequipped Item
+     */
+    public Equip unequip(int slot) {
+        Equip e = equipment[slot];
         equipment[slot] = null;
+        return e;
     }
 
+    /***
+     * checks whether or not a Hero can equip a certain Equip based on type
+     * @param equip
+     * @return
+     */
     private boolean checkCanEquip(Equip equip){
         String etype = equip.getType();
         if (etype.equals("accessory") || etype.equals("talisman") || etype.equals("common") || etype.equals("physical")){ return true; }
@@ -77,6 +107,10 @@ public class Hero extends Actor{
         this.equipment = equipment;
     }
 
+    /***
+     * adds up all modifiers of equipment of all slots
+     * @return
+     */
     public int[] getEquipmentModifiers(){
         int maxHP;
         int currHP;
@@ -103,5 +137,6 @@ public class Hero extends Actor{
 
     public Hero() {
         equipment = new Equip[10];
+        setType("warrior");
     }
 }
