@@ -136,10 +136,12 @@ public class ActorDemoData {
         h1.setSkill(demoSkill1);
         h1.setType("mage");
         h1.setStatBlock(400, 10, 5, 50, 50, 25, 60);
+        h1.setMagic(true);
         h2.setName("Rupert");
         h2.setSkill(demoSkill2);
         h2.setType("healer");
         h2.setStatBlock(400, 10, 5, 50, 50, 25, 60);
+        h2.setMagic(true);
         h3.setName("Lydia");
         h3.setSkill(demoSkill3);
         h3.setType("rogue");

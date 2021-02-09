@@ -15,16 +15,19 @@ import java.util.ArrayList;
  *  7: Feet
  *  8: Talisman
  *  9: Accessory
+ * isMagic: whether the Hero uses magic attacks or non-magic attacks
  */
 public class Hero extends Actor {
     private Skill skill;
     private Equip[] equipment;
+    private boolean isMagic = false;
 
 
     public Hero() {
         equipment = new Equip[10];
         setType("warrior");
     }
+
     /***
      * function to equip an item. Checks if Equip type is compatible, and if Equip exists on that slot, returns that
      * Equip
@@ -112,6 +115,10 @@ public class Hero extends Actor {
         return equipment;
     }
 
+    public boolean isMagic() {
+        return isMagic;
+    }
+
     public Hero setSkill(Skill skill) {
         this.skill = skill;
         return this;
@@ -124,6 +131,11 @@ public class Hero extends Actor {
 
     public Hero setEquipmentSlot(int slot, Equip equip) {
         this.equipment[slot] = equip;
+        return this;
+    }
+
+    public Hero setMagic(boolean magic) {
+        isMagic = magic;
         return this;
     }
 
