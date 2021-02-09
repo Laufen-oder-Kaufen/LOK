@@ -35,9 +35,13 @@ public class Equip extends Actor{
                 this.slot = 1;
             case "mainhand":
                 this.slot = 1;
+            case "main":
+                this.slot = 1;
             case "weapon offhand":
                 this.slot = 2;
             case "offhand":
+                this.slot = 2;
+            case "off":
                 this.slot = 2;
             case "head":
                 this.slot = 3;
