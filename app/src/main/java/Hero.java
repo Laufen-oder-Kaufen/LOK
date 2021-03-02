@@ -21,6 +21,7 @@ public class Hero extends Actor {
     private Skill skill;
     private Equip[] equipment;
     private boolean isMagic = false;
+    private static final int boostBonus = 1;
 
 
     public Hero() {
@@ -141,28 +142,22 @@ public class Hero extends Actor {
 
     /***
      * adds up all modifiers of equipment of all slots
-     * @return
+     * @return array of modified total equipment bonus
      */
     public int[] getEquipmentModifiers() {
-        int maxHP;
-        int currHP;
-        int str;
-        int def;
-        int mag;
-        int mdf;
-        int agi;
-        int luk;
+        int boostval;
         int[] result = {0, 0, 0, 0, 0, 0, 0, 0};
         for (Equip e :
                 this.equipment) {
-            result[1] += e.getMaxHP();
-            result[2] += e.getCurrHP();
-            result[3] += e.getStr();
-            result[4] += e.getDef();
-            result[5] += e.getMag();
-            result[6] += e.getMdf();
-            result[7] += e.getAgi();
-            result[8] += e.getLuk();
+            boostval = e.getBonus() * boostBonus;
+            result[1] += e.getMaxHP() * boostval;
+            result[2] += e.getCurrHP() * boostval;
+            result[3] += e.getStr() * boostval;
+            result[4] += e.getDef() * boostval;
+            result[5] += e.getMag() * boostval;
+            result[6] += e.getMdf() * boostval;
+            result[7] += e.getAgi() * boostval;
+            result[8] += e.getLuk() * boostval;
         }
         return result;
     }
