@@ -16,6 +16,7 @@ import java.util.Locale;
  */
 public class Equip extends Actor {
     private int slot = 0;
+    private int bonus = 0;
 
     public Equip() {
     }
@@ -24,8 +25,17 @@ public class Equip extends Actor {
         return slot;
     }
 
+    public int getBonus() {
+        return bonus;
+    }
+
     public Equip setSlot(int slot) {
         this.slot = slot;
+        return this;
+    }
+
+    public Equip setBonus(int bonus) {
+        this.bonus = bonus;
         return this;
     }
 
