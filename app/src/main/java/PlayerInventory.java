@@ -99,4 +99,25 @@ public class PlayerInventory {
         this.items.add(item);
         return this;
     }
+
+    /***
+     * EnchantEquip tries to remove the oldeqips equip items from the inventory. If successfull it increases the bonus value of the boostedEquip
+     * @param oldequips array of sacrificed equipment
+     * @param boostedEquip piece of equipment that gets improved
+     * @return check value to see wether or not the process finished successfully
+     */
+    public boolean EnchantEquip(Equip[] oldequips, Equip boostedEquip) {
+        Vector checkEquips = (Vector) equips.clone();
+        //check to see if the oldequips exist in equips;
+        for (Equip e : oldequips) {
+            if (!checkEquips.removeElement(e)) {
+                return false;
+            }
+        }
+        for (Equip e : oldequips) {
+            equips.removeElement(e);
+        }
+        boostedEquip.setBonus(boostedEquip.getBonus() + 1);
+        return true;
+    }
 }
