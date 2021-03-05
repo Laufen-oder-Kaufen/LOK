@@ -9,8 +9,7 @@
     <item
             android:id="@+id/navigation_team"
             android:icon="@drawable/ic_round_person_24"
-            android:title="@string/title_team"
-            android:iconTint="@android:color/black"/>
+            android:title="@string/title_team"/>
 
     <item
             android:id="@+id/placeholder"
