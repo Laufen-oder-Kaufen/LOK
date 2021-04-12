@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">LOK</string>
+    <string name="active_team">Active Team</string>
+    <string name="all_team">All Heroes</string>
     <string name="title_shop">Shop</string>
     <string name="title_team">Team</string>
     <string name="title_arena">Arena</string>
