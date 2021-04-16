@@ -3,23 +3,30 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/mobile_navigation"
-            app:startDestination="@+id/navigation_home">
+            app:startDestination="@+id/navigation_map">
 
     <fragment
-            android:id="@+id/navigation_home"
-            android:name="com.example.lok.ui.home.HomeFragment"
-            android:label="@string/title_home"
-            tools:layout="@layout/fragment_home"/>
+            android:id="@+id/navigation_shop"
+            android:name="com.example.lok.ui.shop.ShopFragment"
+            android:label="@string/title_shop"
+            tools:layout="@layout/shop_fragment"/>
 
     <fragment
-            android:id="@+id/navigation_dashboard"
-            android:name="com.example.lok.ui.dashboard.DashboardFragment"
-            android:label="@string/title_dashboard"
-            tools:layout="@layout/fragment_dashboard"/>
+            android:id="@+id/navigation_team"
+            android:name="com.example.lok.ui.team.TeamFragment"
+            android:label="@string/title_team"
+            tools:layout="@layout/team_fragment"/>
 
     <fragment
-            android:id="@+id/navigation_notifications"
-            android:name="com.example.lok.ui.notifications.NotificationsFragment"
-            android:label="@string/title_notifications"
-            tools:layout="@layout/fragment_notifications"/>
+            android:id="@+id/navigation_map"
+            android:name="com.example.lok.ui.map.MapFragment"
+            android:label="@string/title_map"
+            tools:layout="@layout/map_fragment"/>
+
+    <fragment
+            android:id="@+id/navigation_gacha"
+            android:name="com.example.lok.ui.gacha.GachaFragment"
+            android:label="@string/title_gacha"
+            tools:layout="@layout/gacha_fragment"/>
+
 </navigation>
