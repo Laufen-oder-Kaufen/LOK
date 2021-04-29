@@ -20,7 +20,6 @@ import java.util.ArrayList;
 public class Hero extends Actor {
     private Skill skill;
     private Equip[] equipment;
-    private boolean isMagic = false;
     private static final int boostBonus = 1;
 
 
@@ -116,9 +115,6 @@ public class Hero extends Actor {
         return equipment;
     }
 
-    public boolean isMagic() {
-        return isMagic;
-    }
 
     public Hero setSkill(Skill skill) {
         this.skill = skill;
@@ -135,10 +131,6 @@ public class Hero extends Actor {
         return this;
     }
 
-    public Hero setMagic(boolean magic) {
-        isMagic = magic;
-        return this;
-    }
 
     /***
      * adds up all modifiers of equipment of all slots

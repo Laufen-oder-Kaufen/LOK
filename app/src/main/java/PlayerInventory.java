@@ -3,7 +3,7 @@ import android.media.audiofx.DynamicsProcessing;
 import java.util.Vector;
 
 /***
- * PlayerInventory is a Singleton Class that represents the collected invetory of the Player
+ * PlayerInventory is a Singleton Class that represents the collected inventory of the Player
  */
 public class PlayerInventory {
     private static PlayerInventory playerinvetory = new PlayerInventory();

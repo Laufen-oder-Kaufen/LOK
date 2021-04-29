@@ -47,6 +47,8 @@ abstract class Actor extends MenuActor {
     private int mdf = 0;
     private int agi = 0;
     private int luk = 0;
+    private String rarity = "";
+    String charClass = "";
 
     public Actor() {
     }
@@ -86,6 +88,12 @@ abstract class Actor extends MenuActor {
     public int getLuk() {
         return luk;
     }
+
+    public String getRarity() {
+        return rarity;
+    }
+
+    public String getCharClass(){return charClass;}
 
     public Actor setType(String type) {
         this.type = type;
@@ -132,6 +140,16 @@ abstract class Actor extends MenuActor {
         return this;
     }
 
+    public Actor setRarity(String rarity) {
+        this.rarity = rarity;
+        return this;
+    }
+
+    public Actor setCharClass(String charClass){
+        this.charClass = charClass;
+        return this;
+    }
+
     /***
      * function to set the entire stat block at once
      * @param maxHP
@@ -151,5 +169,72 @@ abstract class Actor extends MenuActor {
         this.mdf = mdf;
         this.agi = agi;
         this.luk = luk;
+    }
+
+
+    public static void levelUp(Actor actor, int level){
+        System.out.println("Level UP");
+        double multiplicator = 0;
+
+        if (actor.getRarity().equals("1")) {
+            multiplicator = 0.03;
+        }
+
+        if (actor.getRarity().equals("2")) {
+            multiplicator = 0.04;
+        }
+
+        if (actor.getRarity().equals("3")) {
+            multiplicator = 0.05;
+        }
+
+        if (actor.getRarity().equals("4")) {
+            multiplicator = 0.06;
+        }
+
+        if (actor.getRarity().equals("5")) {
+            multiplicator = 0.07;
+        }
+
+
+        if (actor.getRarity().equals("C")) {
+            multiplicator = 0.08;
+        }
+        if (actor.getRarity().equals("U")) {
+            multiplicator = 0.10;
+        }
+        if (actor.getRarity().equals("R")) {
+            multiplicator = 0.11;
+        }
+        if (actor.getRarity().equals("L")) {
+            multiplicator= 0.13;
+        }
+        System.out.println(actor.toString());
+
+        for (int i = 0; i < level; i++) {
+
+            actor.setMaxHP(actor.getMaxHP() + (int) Math.round(actor.getMaxHP() * multiplicator));
+            actor.setCurrHP(actor.getMaxHP());
+            actor.setStr(actor.getStr() + (int) Math.round(actor.getStr() * multiplicator));
+            if (Math.round(actor.getStr() * multiplicator) == 0){
+                actor.setStr(actor.getStr() + 1);
+            }
+
+            actor.setDef(actor.getDef() + (int) Math.round(actor.getDef() * multiplicator));
+
+            actor.setMag(actor.getMag() + (int) Math.round(actor.getMag() * multiplicator));
+            if (Math.round(actor.getMag() * multiplicator) == 0){
+                actor.setMag(actor.getMag() + 1);
+            }
+
+            actor.setMdf(actor.getMdf() + (int) Math.round(actor.getMdf() * multiplicator));
+            actor.setAgi(actor.getAgi() + (int) Math.round(actor.getAgi() * multiplicator/4));
+            if (Math.round(actor.getAgi() * multiplicator) == 0){
+                actor.setAgi(actor.getAgi() + 1);
+            }
+            //              actor.setLuck(actor.getLuck() + (int) Math.round(actor.getLuck() * multiplicator/4));
+            System.out.println(actor.toString());
+        }
+
     }
 }
