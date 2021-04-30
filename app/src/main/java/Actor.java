@@ -48,7 +48,6 @@ abstract class Actor extends MenuActor {
     private int agi = 0;
     private int luk = 0;
     private String rarity = "";
-    String charClass = "";
 
     public Actor() {
     }
@@ -93,7 +92,6 @@ abstract class Actor extends MenuActor {
         return rarity;
     }
 
-    public String getCharClass(){return charClass;}
 
     public Actor setType(String type) {
         this.type = type;
@@ -146,7 +144,6 @@ abstract class Actor extends MenuActor {
     }
 
     public Actor setCharClass(String charClass){
-        this.charClass = charClass;
         return this;
     }
 

@@ -92,7 +92,7 @@ public static void fight(ArrayList<Hero> heroes, ArrayList<Monster> enemies, Lin
 
                 if (victimType.equals("Monster")) {
                     rn = r.nextInt(enemies.size());
-                    if (actor.getCharClass().contains("A") == true) {
+                    if (actor.getType().contains("A") == true) {
                     victim = archerEnemyVictim(enemies);
                     }
                     else victim = enemies.get(rn);
@@ -100,16 +100,16 @@ public static void fight(ArrayList<Hero> heroes, ArrayList<Monster> enemies, Lin
                 }
                 if (victimType.equals("Hero")) {
                     rn = r.nextInt(heroes.size());
-                    if (actor.getCharClass().contains("A") == true) {
+                    if (actor.getType().contains("A") == true) {
                         victim = archerHeroVictim(heroes);
                     }
                     else victim = heroes.get(rn);
                 }
-                if (actor.getCharClass().contains("M") == true) {
+                if (actor.getType().contains("M") == true) {
                     System.out.println("Magic attack!");
                     damage = (int) ((actor.getMag() - (victim.getMdf() / 4)) + Math.round(actor.getMag() * 0.5));
                 }
-                if (actor.getCharClass().contains("M") == false) {
+                if (actor.getType().contains("M") == false) {
                     damage = actor.getStr() - (victim.getDef() / 4);
                 }
                 if (isCritical(actor, victim)) {
