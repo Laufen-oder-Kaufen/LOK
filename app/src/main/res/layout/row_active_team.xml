@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <ImageView
+                android:id="@+id/row_team_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/con6"/>
+        <TextView
+                android:id="@+id/row_team_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                app:layout_constraintStart_toStartOf="@+id/row_team_image"
+                app:layout_constraintEnd_toEndOf="@+id/row_team_image"
+                app:layout_constraintTop_toBottomOf="@+id/row_team_image"/>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/collapsable"
+            android:layout_width="60dp"
+            android:layout_height="80dp"
+            app:layout_constraintTop_toBottomOf="@+id/row_team_name"
+            app:layout_constraintStart_toStartOf="@+id/row_team_image"
+            app:layout_constraintEnd_toEndOf="@+id/row_team_image">
+
+            <Button
+                    android:id="@+id/infoBtn"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:text="info"
+                    android:textSize="10dp"
+                    android:clickable="true"
+                    app:layout_constraintTop_toTopOf="@+id/collapsable"
+                    app:layout_constraintStart_toStartOf="@+id/collapsable"
+                    app:layout_constraintEnd_toEndOf="@+id/collapsable"/>
+
+            <Button
+                    android:id="@+id/delBtn"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:text="del"
+                    android:textSize="10dp"
+                    app:layout_constraintStart_toStartOf="@+id/collapsable"
+                    app:layout_constraintEnd_toEndOf="@+id/collapsable"
+                    app:layout_constraintTop_toBottomOf="@+id/infoBtn"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

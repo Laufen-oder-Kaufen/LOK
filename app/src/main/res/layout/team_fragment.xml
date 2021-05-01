@@ -8,32 +8,33 @@
         tools:context=".ui.team.TeamFragment">
 
     <TextView
+            android:id="@+id/text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/active_team"
             android:gravity="center"
             android:textStyle="bold"
             android:textSize="32sp"
-            app:layout_constraintBottom_toTopOf="@+id/activeTeamGridView"/>
+            app:layout_constraintTop_toTopOf="parent"/>
 
     <GridView
             android:id="@+id/activeTeamGridView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="180dp"
             android:numColumns="4"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/teamGridView"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text"/>
 
     <TextView
+            android:id="@+id/text2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/all_team"
             android:gravity="center"
             android:textStyle="bold"
             android:textSize="32sp"
-            app:layout_constraintBottom_toTopOf="@+id/teamGridView"/>
+            app:layout_constraintTop_toBottomOf="@+id/activeTeamGridView"/>
 
     <GridView
             android:id="@+id/teamGridView"
@@ -41,9 +42,10 @@
             android:layout_height="wrap_content"
             android:numColumns="3"
             android:scrollbars="vertical"
+            android:clickable="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/activeTeamGridView"/>
+            app:layout_constraintTop_toBottomOf="@id/text2"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

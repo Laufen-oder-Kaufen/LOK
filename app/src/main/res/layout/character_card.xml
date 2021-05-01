@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/character_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?selectableItemBackground"
+        app:cardCornerRadius="10dp">
+
+    <RelativeLayout
+            android:id="@+id/rl_wrapper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:id="@+id/image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:src="@drawable/con6"/>
+
+        <LinearLayout
+                android:id="@+id/ll_wrapper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/image"
+                android:layout_centerHorizontal="true"
+                android:orientation="vertical">
+
+            <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/collapsable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_wrapper"
+                    app:layout_constraintStart_toStartOf="@+id/ll_wrapper"
+                    app:layout_constraintEnd_toEndOf="@+id/ll_wrapper">
+
+                <Button
+                        android:id="@+id/infoBtn"
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:text="info"
+                        android:textSize="10dp"
+                        android:clickable="true"
+                        app:layout_constraintTop_toTopOf="@+id/collapsable"
+                        app:layout_constraintStart_toStartOf="@+id/collapsable"
+                        app:layout_constraintEnd_toEndOf="@+id/collapsable"/>
+
+                <Button
+                        android:id="@+id/delBtn"
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:text="del"
+                        android:textSize="10dp"
+                        app:layout_constraintStart_toStartOf="@+id/collapsable"
+                        app:layout_constraintEnd_toEndOf="@+id/collapsable"
+                        app:layout_constraintTop_toBottomOf="@+id/infoBtn"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

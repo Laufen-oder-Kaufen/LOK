@@ -11,7 +11,7 @@ abstract class Skill extends MenuActor{
 
     abstract void skillEffect();
 
-    public Skill(int id, String name, String image, String icon, int cd) {
+    public Skill(int id, String name, int image, int icon, int cd) {
         super(id, name, image, icon);
         this.cd = cd;
     }

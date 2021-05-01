@@ -46,7 +46,7 @@ abstract class Actor extends MenuActor {
     private int agi = 0;
     private int luk = 0;
 
-    public Actor(int id, String name, String image, String icon, String type, int maxHP, int currHP, int str, int def, int mag, int mdf, int agi, int luk) {
+    public Actor(int id, String name, int image, int icon, String type, int maxHP, int currHP, int str, int def, int mag, int mdf, int agi, int luk) {
         super(id, name, image, icon);
         this.type = type;
         this.maxHP = maxHP;

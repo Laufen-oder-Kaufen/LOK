@@ -4,10 +4,10 @@
 abstract class MenuActor {
     private int id;
     private String name;
-    private String image;
-    private String icon;
+    private int image;
+    private int icon;
 
-    public MenuActor(int id, String name, String image, String icon) {
+    public MenuActor(int id, String name, int image, int icon) {
         this.id = id;
         this.name = name;
         this.image = image;
@@ -22,11 +22,11 @@ abstract class MenuActor {
         return name;
     }
 
-    public String getImage() {
+    public int getImage() {
         return image;
     }
 
-    public String getIcon() {
+    public int getIcon() {
         return icon;
     }
 }

@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         fab.setOnClickListener(View.OnClickListener {
             Toast.makeText(applicationContext, "Starte Battle Arena", Toast.LENGTH_LONG).show()
+            println("Hallo")
         })
 
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
