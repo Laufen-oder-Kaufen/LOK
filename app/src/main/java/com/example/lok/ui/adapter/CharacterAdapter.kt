@@ -1,5 +1,6 @@
 package com.example.lok.ui.adapter
 
+import Hero
 import android.content.Context
 import android.content.Intent
 import android.util.Log
@@ -12,8 +13,9 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.lok.R
 import com.example.lok.TestData
 
-class CharacterAdapter(context: Context, count: Int): BaseAdapter() {
+class CharacterAdapter(context: Context, count: Int, state: String): BaseAdapter() {
 
+    private val mState : String
     private val mContext : Context
     private val mCount : Int
 
@@ -31,6 +33,7 @@ class CharacterAdapter(context: Context, count: Int): BaseAdapter() {
     init{
         this.mContext = context
         this.mCount = count
+        this.mState = state
     }
 
     // rendering each row
@@ -41,8 +44,15 @@ class CharacterAdapter(context: Context, count: Int): BaseAdapter() {
         // val collapsable = rowMain.findViewById<ConstraintLayout>(R.id.collapsable)
         val imageView = rowMain.findViewById<ImageView>(R.id.row_team_image)
         val nameTextView = rowMain.findViewById<TextView>(R.id.row_team_name)
-        imageView.setImageResource(data.companion.heroes.get(position).image)
-        nameTextView.text = data.companion.heroes.get(position).name
+        val heroes: List<Hero>
+
+        if(mState == "active"){
+            heroes = data.companion.activeTeam
+        } else{
+            heroes = data.companion.heroes
+        }
+        imageView.setImageResource(heroes.get(position).image)
+        nameTextView.text = heroes.get(position).name
 
         imageView.setOnClickListener{
 //            if(collapsable.visibility == View.GONE){
@@ -51,16 +61,16 @@ class CharacterAdapter(context: Context, count: Int): BaseAdapter() {
 //                collapsable.visibility = View.GONE
 //            }
             val view = layoutInflater.inflate(R.layout.popup,null)
-            view.findViewById<ImageView>(R.id.popup_image).setImageResource(data.companion.heroes.get(position).image)
-            view.findViewById<TextView>(R.id.popup_name_text).text = data.companion.heroes.get(position).name
-            view.findViewById<TextView>(R.id.popup_class_text).text = data.companion.heroes.get(position).type
-            view.findViewById<TextView>(R.id.stats_maxhp).text = data.companion.heroes.get(position).maxHP.toString()
-            view.findViewById<TextView>(R.id.stats_strength).text = data.companion.heroes.get(position).str.toString()
-            view.findViewById<TextView>(R.id.stats_defense).text = data.companion.heroes.get(position).def.toString()
-            view.findViewById<TextView>(R.id.stats_magic).text = data.companion.heroes.get(position).mag.toString()
-            view.findViewById<TextView>(R.id.stats_magicdefense).text = data.companion.heroes.get(position).mdf.toString()
-            view.findViewById<TextView>(R.id.stats_agility).text = data.companion.heroes.get(position).agi.toString()
-            view.findViewById<TextView>(R.id.stats_luck).text = data.companion.heroes.get(position).luk.toString()
+            view.findViewById<ImageView>(R.id.popup_image).setImageResource(heroes.get(position).image)
+            view.findViewById<TextView>(R.id.popup_name_text).text = heroes.get(position).name
+            view.findViewById<TextView>(R.id.popup_class_text).text = heroes.get(position).type
+            view.findViewById<TextView>(R.id.stats_maxhp).text = heroes.get(position).maxHP.toString()
+            view.findViewById<TextView>(R.id.stats_strength).text = heroes.get(position).str.toString()
+            view.findViewById<TextView>(R.id.stats_defense).text = heroes.get(position).def.toString()
+            view.findViewById<TextView>(R.id.stats_magic).text = heroes.get(position).mag.toString()
+            view.findViewById<TextView>(R.id.stats_magicdefense).text = heroes.get(position).mdf.toString()
+            view.findViewById<TextView>(R.id.stats_agility).text = heroes.get(position).agi.toString()
+            view.findViewById<TextView>(R.id.stats_luck).text = heroes.get(position).luk.toString()
 
             val popup = PopupWindow(view, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
             popup.showAtLocation(view, Gravity.CENTER, 0, 0)

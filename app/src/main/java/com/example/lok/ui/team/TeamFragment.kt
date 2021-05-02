@@ -29,8 +29,8 @@ class TeamFragment : Fragment() {
         val allTeam = view.findViewById<GridView>(R.id.teamGridView)
         val activeTeam = view.findViewById<GridView>(R.id.activeTeamGridView)
 
-        allTeam.adapter = CharacterAdapter(requireContext(), 6)
-        activeTeam.adapter = CharacterAdapter(requireContext(), 4)
+        allTeam.adapter = CharacterAdapter(requireContext(), 6, "all")
+        activeTeam.adapter = CharacterAdapter(requireContext(), 4, "active")
         return view
     }
 

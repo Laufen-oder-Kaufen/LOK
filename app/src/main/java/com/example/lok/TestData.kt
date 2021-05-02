@@ -41,6 +41,7 @@ class TestData {
 
         val heroes = listOf<Hero>(warrior, warrior2, warrior3, magician, magician2, magician3,
             ninja, ninja2, ninja3, tank, tank2, tank3)
+        val activeTeam = listOf<Hero>(warrior, tank, magician, ninja)
     }
 
     var companion = Companion
