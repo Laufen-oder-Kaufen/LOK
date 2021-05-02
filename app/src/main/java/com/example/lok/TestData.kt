@@ -38,10 +38,24 @@ class TestData {
             100, 85, 10, 8, 5, 5, 15, 15)
         val tank3 = Hero(32, "Harvel Sr", images.get(11), images.get(11), "Tank",
             200, 170, 25, 20, 0, 0, 2, 8)
+        val nullHero = Hero(999, "NULL", images.get(14), images.get(14), "NULL",
+            0,0,0,0,0,0,0,0)
 
-        val heroes = listOf<Hero>(warrior, warrior2, warrior3, magician, magician2, magician3,
+        val heroes = arrayListOf<Hero>(warrior, warrior2, warrior3, magician, magician2, magician3,
             ninja, ninja2, ninja3, tank, tank2, tank3)
-        val activeTeam = listOf<Hero>(warrior, tank, magician, ninja)
+        val activeTeam = arrayListOf<Int>(32, 22, 12, 42)
+        val myHeroes = arrayListOf<Int>(4, 1, 2, 3, 41, 11, 21)
+
+        fun getHero(heroId: Int): Hero {
+            var myHero: Hero = nullHero
+            for (hero: Hero in heroes ){
+                val id: Int = hero.id
+                if(id == heroId){
+                    myHero = hero
+                }
+            }
+            return myHero
+        }
     }
 
     var companion = Companion

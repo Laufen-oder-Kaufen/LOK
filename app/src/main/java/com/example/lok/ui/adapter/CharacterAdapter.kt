@@ -12,6 +12,8 @@ import android.widget.*
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.lok.R
 import com.example.lok.TestData
+import com.example.lok.ui.team.TeamFragment
+import java.lang.IndexOutOfBoundsException
 
 class CharacterAdapter(context: Context, count: Int, state: String): BaseAdapter() {
 
@@ -41,44 +43,61 @@ class CharacterAdapter(context: Context, count: Int, state: String): BaseAdapter
         val data : TestData = TestData()
         val layoutInflater:LayoutInflater = LayoutInflater.from(mContext)
         val rowMain = layoutInflater.inflate(R.layout.row_team, parent, false)
-        // val collapsable = rowMain.findViewById<ConstraintLayout>(R.id.collapsable)
         val imageView = rowMain.findViewById<ImageView>(R.id.row_team_image)
         val nameTextView = rowMain.findViewById<TextView>(R.id.row_team_name)
-        val heroes: List<Hero>
+        val heroes: List<Int>
 
         if(mState == "active"){
             heroes = data.companion.activeTeam
         } else{
-            heroes = data.companion.heroes
+            heroes = data.companion.myHeroes
         }
-        imageView.setImageResource(heroes.get(position).image)
-        nameTextView.text = heroes.get(position).name
+        val myHero: Hero = data.companion.getHero(heroes.get(position))
+        try {
+            imageView.setImageResource(myHero.image)
+            nameTextView.text = myHero.name
 
-        imageView.setOnClickListener{
-//            if(collapsable.visibility == View.GONE){
-//                collapsable.visibility = View.VISIBLE
-//            } else{
-//                collapsable.visibility = View.GONE
-//            }
-            val view = layoutInflater.inflate(R.layout.popup,null)
-            view.findViewById<ImageView>(R.id.popup_image).setImageResource(heroes.get(position).image)
-            view.findViewById<TextView>(R.id.popup_name_text).text = heroes.get(position).name
-            view.findViewById<TextView>(R.id.popup_class_text).text = heroes.get(position).type
-            view.findViewById<TextView>(R.id.stats_maxhp).text = heroes.get(position).maxHP.toString()
-            view.findViewById<TextView>(R.id.stats_strength).text = heroes.get(position).str.toString()
-            view.findViewById<TextView>(R.id.stats_defense).text = heroes.get(position).def.toString()
-            view.findViewById<TextView>(R.id.stats_magic).text = heroes.get(position).mag.toString()
-            view.findViewById<TextView>(R.id.stats_magicdefense).text = heroes.get(position).mdf.toString()
-            view.findViewById<TextView>(R.id.stats_agility).text = heroes.get(position).agi.toString()
-            view.findViewById<TextView>(R.id.stats_luck).text = heroes.get(position).luk.toString()
+            imageView.setOnClickListener{
+                val view = layoutInflater.inflate(R.layout.popup, null)
+                view.findViewById<ImageView>(R.id.popup_image).setImageResource(myHero.image)
+                view.findViewById<TextView>(R.id.popup_name_text).text = myHero.name
+                view.findViewById<TextView>(R.id.popup_class_text).text = myHero.type
+                view.findViewById<TextView>(R.id.stats_maxhp).text = myHero.maxHP.toString()
+                view.findViewById<TextView>(R.id.stats_strength).text = myHero.str.toString()
+                view.findViewById<TextView>(R.id.stats_defense).text = myHero.def.toString()
+                view.findViewById<TextView>(R.id.stats_magic).text = myHero.mag.toString()
+                view.findViewById<TextView>(R.id.stats_magicdefense).text = myHero.mdf.toString()
+                view.findViewById<TextView>(R.id.stats_agility).text = myHero.agi.toString()
+                view.findViewById<TextView>(R.id.stats_luck).text = myHero.luk.toString()
+                if(mState == "active"){
+                    view.findViewById<Button>(R.id.add_del_button).text = "DEL"
+                }else{
+                    view.findViewById<Button>(R.id.add_del_button).text = "ADD"
+                }
 
-            val popup = PopupWindow(view, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
-            popup.showAtLocation(view, Gravity.CENTER, 0, 0)
-            val closeBtn = view.findViewById<Button>(R.id.popup_close_button)
-            closeBtn.setOnClickListener{
-                popup.dismiss()
+                val popup = PopupWindow(view, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+                popup.showAtLocation(view, Gravity.CENTER, 0, 0)
+                val closeBtn = view.findViewById<Button>(R.id.popup_close_button)
+                closeBtn.setOnClickListener{
+                    popup.dismiss()
+                }
+                val addDelButton = view.findViewById<Button>(R.id.add_del_button)
+                addDelButton.setOnClickListener{
+                    if (mState == "active"){
+                        data.companion.myHeroes.add(myHero.id)
+                        data.companion.activeTeam.remove(myHero.id)
+                        popup.dismiss()
+                    } else {
+                        data.companion.myHeroes.remove(myHero.id)
+                        data.companion.activeTeam.add(myHero.id)
+                        popup.dismiss()
+                    }
+                }
             }
+        }catch(exception: IndexOutOfBoundsException){
+            exception.stackTrace
         }
+
 
         return rowMain
     }
