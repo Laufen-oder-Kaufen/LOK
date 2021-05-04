@@ -1,4 +1,5 @@
 import java.util.*;
+import java.sql.*;
 
 public class Battle {
 
@@ -6,23 +7,38 @@ public class Battle {
 
   This function gets the heroes and enemies and prepares them for battle.
 
-public void prepare getHeroes(){
+  */
 
-ArrayList<Hero> heroList = getHeroes();
-ArrayList<Enemy> enemyList = getEnemies();
+    public static /*ArrayList<Hero>*/ void getHeroes () throws ClassNotFoundException, SQLException {
 
-LinkedList<Character> battleSequence = new LinkedList<Character>();
-for (int i = 0;i<heroList.size();i++){
-battleSequence.add(heroList.get(i));
+        Class.forName("org.sqlite.JDBC");
+        Connection con = DriverManager.getConnection("C:/Users/jdudlit/Desktop/LaufenOderKaufen/Spielerdatenbank.db");
+        Statement stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery("select * from account_data");
+        System.out.println(rs.getString(2));
+
+    }
+
+public void prepare() {
+
+
+
+    ArrayList<Hero> heroList = null;
+    ArrayList<Monster> enemyList = null;
+
+    LinkedList<Actor> battleSequence = new LinkedList<Actor>();
+    for (int i = 0; i < heroList.size(); i++) {
+        battleSequence.add(heroList.get(i));
+    }
+    for (int i = 0; i < enemyList.size(); i++) {
+        battleSequence.add(enemyList.get(i));
+    }
+
+    Collections.sort(battleSequence, Comparator.comparingInt(Actor::getAgi).reversed());
+    fight(heroList, enemyList, battleSequence);
+
 }
-for (int i = 0;i<enemyList.size();i++){
-battleSequence.add(enemyList.get(i));
-}
 
-Collections.sort(battleSequence, Comparator.comparingInt(Character::getAgility).reversed());
-fight(heroList, enemyList, battleSequence);
-
-*/
     public static Monster archerEnemyVictim(ArrayList<Monster> victimList){
         int hp = 100000;
         int index = 0;
