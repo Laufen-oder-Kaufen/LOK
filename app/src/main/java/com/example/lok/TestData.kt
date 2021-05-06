@@ -1,6 +1,7 @@
 package com.example.lok
 
 import Hero
+import Monster
 import java.util.ArrayList
 
 class TestData {
@@ -15,11 +16,11 @@ class TestData {
             R.drawable.con26, R.drawable.con27, R.drawable.con28)
 
         val warrior = Hero(4, "Sir Grauselig", images.get(0), images.get(0), "Warrior",
-            100, 85, 15, 12, 0, 3, 8, 8)
+            100, 100, 15, 12, 0, 3, 8, 8)
         val magician = Hero(1, "Grindelwald", images.get(5), images.get(5), "Magician",
-            100, 85, 5, 5, 15, 13, 4, 12)
+            100, 100, 5, 5, 15, 13, 4, 12)
         val ninja = Hero(2,"Yamato", images.get(1), images.get(1), "Ninja",
-            100, 85, 10, 8, 5, 5, 15, 15)
+            100, 100, 10, 8, 5, 5, 15, 15)
         val tank = Hero(3, "Hulk", images.get(3), images.get(3), "Tank",
             200, 170, 25, 20, 0, 0, 2, 8)
         val warrior2 = Hero(41, "Mrs Grauselig", images.get(2), images.get(2), "Warrior",
@@ -39,12 +40,23 @@ class TestData {
         val tank3 = Hero(32, "Harvel Sr", images.get(11), images.get(11), "Tank",
             200, 170, 25, 20, 0, 0, 2, 8)
         val nullHero = Hero(999, "NULL", images.get(14), images.get(14), "NULL",
+            0,100,0,0,0,0,0,0)
+
+        val enemy1 = Monster(101, "Harvel", images.get(11), images.get(11), "NULL",
+            100,100,0,0,0,0,0,0)
+        val enemy2 = Monster(102, "Trump", images.get(3), images.get(3), "NULL",
+            100,100,0,0,0,0,0,0)
+        val enemy3 = Monster(103, "Pikachu", images.get(12), images.get(12), "NULL",
+            100,100,0,0,0,0,0,0)
+        val nullEnemy = Monster(199, "NULL", images.get(14), images.get(14), "NULL",
             0,0,0,0,0,0,0,0)
 
         val heroes = arrayListOf<Hero>(warrior, warrior2, warrior3, magician, magician2, magician3,
             ninja, ninja2, ninja3, tank, tank2, tank3)
+        val enemies = arrayListOf<Monster>(enemy1, enemy2, enemy3)
         val activeTeam = arrayListOf<Int>(32, 22, 12, 42)
         val myHeroes = arrayListOf<Int>(4, 1, 2, 3, 41, 11, 21)
+        val myEnemies = arrayListOf<Int>(101, 102, 103)
 
         fun getHero(heroId: Int): Hero {
             var myHero: Hero = nullHero
@@ -55,6 +67,17 @@ class TestData {
                 }
             }
             return myHero
+        }
+
+        fun getEnemy(enemyId: Int): Monster {
+            var myEnemy: Monster = nullEnemy
+            for (enemy: Monster in enemies ){
+                val id: Int = enemy.id
+                if(id == enemyId){
+                    myEnemy = enemy
+                }
+            }
+            return myEnemy
         }
     }
 

@@ -2,17 +2,13 @@ package com.example.lok.ui.adapter
 
 import Hero
 import android.content.Context
-import android.content.Intent
-import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.lok.R
 import com.example.lok.TestData
-import com.example.lok.ui.team.TeamFragment
 import java.lang.IndexOutOfBoundsException
 
 class CharacterAdapter(context: Context, count: Int, state: String): BaseAdapter() {
@@ -20,17 +16,6 @@ class CharacterAdapter(context: Context, count: Int, state: String): BaseAdapter
     private val mState : String
     private val mContext : Context
     private val mCount : Int
-
-    private val names = arrayListOf<String>(
-        "Ritter", "Magier", "Heiler", "Tank", "Bauer", "Paladin",
-        "Name", "Name", "Name","Name", "Name", "Name",
-        "Name", "Name", "Name",)
-    private val images = arrayOf(
-        R.drawable.con6, R.drawable.con7, R.drawable.con8,
-        R.drawable.con10, R.drawable.con11, R.drawable.con12,
-        R.drawable.con20, R.drawable.con21, R.drawable.con22,
-        R.drawable.con23, R.drawable.con24, R.drawable.con25,
-        R.drawable.con26, R.drawable.con27, R.drawable.con28)
 
     init{
         this.mContext = context
@@ -40,7 +25,7 @@ class CharacterAdapter(context: Context, count: Int, state: String): BaseAdapter
 
     // rendering each row
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val data : TestData = TestData()
+        val data = TestData()
         val layoutInflater:LayoutInflater = LayoutInflater.from(mContext)
         val rowMain = layoutInflater.inflate(R.layout.row_team, parent, false)
         val imageView = rowMain.findViewById<ImageView>(R.id.row_team_image)
@@ -52,11 +37,10 @@ class CharacterAdapter(context: Context, count: Int, state: String): BaseAdapter
         } else{
             heroes = data.companion.myHeroes
         }
-        val myHero: Hero = data.companion.getHero(heroes.get(position))
+        val myHero: Hero = data.companion.getHero(heroes[position])
         try {
             imageView.setImageResource(myHero.image)
             nameTextView.text = myHero.name
-
             imageView.setOnClickListener{
                 val view = layoutInflater.inflate(R.layout.popup, null)
                 view.findViewById<ImageView>(R.id.popup_image).setImageResource(myHero.image)
@@ -87,11 +71,17 @@ class CharacterAdapter(context: Context, count: Int, state: String): BaseAdapter
                         data.companion.myHeroes.add(myHero.id)
                         data.companion.activeTeam.remove(myHero.id)
                         popup.dismiss()
-                    } else {
+                    }else{
+                        Toast.makeText(mContext, "You need at least 1 Hero", Toast.LENGTH_LONG).show()
+                    }
+                    if(mState == "all") {
                         data.companion.myHeroes.remove(myHero.id)
                         data.companion.activeTeam.add(myHero.id)
                         popup.dismiss()
+                    }else{
+                        Toast.makeText(mContext, "Team already full", Toast.LENGTH_LONG).show()
                     }
+                    popup.dismiss()
                 }
             }
         }catch(exception: IndexOutOfBoundsException){

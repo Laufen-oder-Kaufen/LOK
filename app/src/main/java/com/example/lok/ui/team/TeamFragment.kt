@@ -4,13 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.GridView
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.example.lok.R
+import com.example.lok.TestData
 import com.example.lok.ui.adapter.CharacterAdapter
 
 class TeamFragment : Fragment() {
@@ -29,7 +27,7 @@ class TeamFragment : Fragment() {
         val allTeam = view.findViewById<GridView>(R.id.teamGridView)
         val activeTeam = view.findViewById<GridView>(R.id.activeTeamGridView)
 
-        allTeam.adapter = CharacterAdapter(requireContext(), 6, "all")
+        allTeam.adapter = CharacterAdapter(requireContext(), TestData.myHeroes.size, "all")
         activeTeam.adapter = CharacterAdapter(requireContext(), 4, "active")
         return view
     }

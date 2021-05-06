@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="0.7">
+
+    <RelativeLayout
+            android:id="@+id/heroesContainer"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5">
+
+        <ListView
+                android:id="@+id/heroes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+<!--            <ImageView-->
+<!--                    android:id="@+id/heroSlot1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:src="@drawable/con6"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:layout_marginTop="30sp"/>-->
+<!--            <ImageView-->
+<!--                    android:id="@+id/heroSlot2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:src="@drawable/con7"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:layout_alignParentLeft="true"-->
+<!--                    android:paddingLeft="30sp"/>-->
+<!--            <ImageView-->
+<!--                    android:id="@+id/heroSlot3"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:src="@drawable/con8"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:paddingBottom="30sp"/>-->
+
+    </RelativeLayout>
+    <RelativeLayout
+            android:id="@+id/enemiesContainer"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5">
+
+        <ListView
+                android:id="@+id/enemies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+<!--        <ImageView-->
+<!--                android:id="@+id/enemySlot1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/con6"-->
+<!--                android:layout_centerInParent="true"-->
+<!--                android:layout_alignParentTop="true"-->
+<!--                android:paddingTop="30sp"/>-->
+<!--        <ImageView-->
+<!--                android:id="@+id/enemySlot2"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/con7"-->
+<!--                android:layout_centerInParent="true"-->
+<!--                android:layout_alignParentRight="true"-->
+<!--                android:paddingRight="30sp"/>-->
+<!--        <ImageView-->
+<!--                android:id="@+id/enemySlot3"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/con8"-->
+<!--                android:layout_centerInParent="true"-->
+<!--                android:layout_alignParentBottom="true"-->
+<!--                android:paddingBottom="30sp"/>-->
+
+    </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="0.3">
+
+    </LinearLayout>
+
+</LinearLayout>
