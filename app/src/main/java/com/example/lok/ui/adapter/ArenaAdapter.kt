@@ -45,7 +45,6 @@ class ArenaAdapter(context: Context, state: String) : BaseAdapter() {
         val hero : Hero
         val enemy : Monster
         var newHP : Int
-        var currHP : Int
 
             if (mState == "hero"){
                 hero = data.getHero(data.myHeroes[position])

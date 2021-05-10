@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+            android:id="@+id/levelimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/levelcard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+            android:id="@+id/levelnr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/levelimg"
+            app:layout_constraintStart_toStartOf="@id/levelimg"
+            app:layout_constraintBottom_toBottomOf="@id/levelimg"
+            app:layout_constraintEnd_toEndOf="@id/levelimg"
+            android:text="1"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="50sp"
+            />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

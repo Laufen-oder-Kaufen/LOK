@@ -5,7 +5,23 @@
         android:layout_height="match_parent" xmlns:tools="http://schemas.android.com/tools"
         android:orientation="vertical"
         android:weightSum="1">
+    
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="0.15">
 
+        <TextView
+                android:id="@+id/arenaTextBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/board"
+                android:text="Hier werden Kampfinformationen wiedergegeben"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="#000000"/>
+
+    </LinearLayout>
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dip"
@@ -22,31 +38,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-<!--            <ImageView-->
-<!--                    android:id="@+id/heroSlot1"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:src="@drawable/con6"-->
-<!--                    android:layout_centerInParent="true"-->
-<!--                    android:layout_alignParentTop="true"-->
-<!--                    android:layout_marginTop="30sp"/>-->
-<!--            <ImageView-->
-<!--                    android:id="@+id/heroSlot2"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:src="@drawable/con7"-->
-<!--                    android:layout_centerInParent="true"-->
-<!--                    android:layout_alignParentLeft="true"-->
-<!--                    android:paddingLeft="30sp"/>-->
-<!--            <ImageView-->
-<!--                    android:id="@+id/heroSlot3"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:src="@drawable/con8"-->
-<!--                    android:layout_centerInParent="true"-->
-<!--                    android:layout_alignParentBottom="true"-->
-<!--                    android:paddingBottom="30sp"/>-->
-
     </RelativeLayout>
     <RelativeLayout
             android:id="@+id/enemiesContainer"
@@ -59,38 +50,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-<!--        <ImageView-->
-<!--                android:id="@+id/enemySlot1"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:src="@drawable/con6"-->
-<!--                android:layout_centerInParent="true"-->
-<!--                android:layout_alignParentTop="true"-->
-<!--                android:paddingTop="30sp"/>-->
-<!--        <ImageView-->
-<!--                android:id="@+id/enemySlot2"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:src="@drawable/con7"-->
-<!--                android:layout_centerInParent="true"-->
-<!--                android:layout_alignParentRight="true"-->
-<!--                android:paddingRight="30sp"/>-->
-<!--        <ImageView-->
-<!--                android:id="@+id/enemySlot3"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:src="@drawable/con8"-->
-<!--                android:layout_centerInParent="true"-->
-<!--                android:layout_alignParentBottom="true"-->
-<!--                android:paddingBottom="30sp"/>-->
-
     </RelativeLayout>
     </LinearLayout>
 
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dip"
-            android:layout_weight="0.3">
+            android:layout_weight="0.15">
+
+        <Button
+                android:id="@+id/skillBtn1"
+                android:layout_width="130dp"
+                android:layout_height="match_parent"
+                android:text="Skill 1"/>
+        <Button
+                android:id="@+id/skillBtn2"
+                android:layout_width="130dp"
+                android:layout_height="match_parent"
+                android:text="Skill 2"
+                android:layout_marginHorizontal="10dp"/>
+        <Button
+                android:id="@+id/skillBtn3"
+                android:layout_width="130dp"
+                android:layout_height="match_parent"
+                android:text="Skill 3"/>
 
     </LinearLayout>
 
