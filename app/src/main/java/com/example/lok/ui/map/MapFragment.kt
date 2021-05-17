@@ -2,21 +2,19 @@ package com.example.lok.ui.map
 
 import android.hardware.SensorManager
 import android.hardware.SensorEvent
-
-import androidx.core.content.ContextCompat.getSystemService
-
 import android.os.Bundle
-
 import android.hardware.SensorEventListener
-
 import android.app.Activity
 import android.content.Context
 import android.hardware.Sensor
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.content.ContextCompat.getSystemService
+import androidx.fragment.app.Fragment
 import com.example.lok.R
-import kotlinx.android.synthetic.main.map_fragment.*
-
 
 //import androidx.lifecycle.ViewModelProviders
 //import android.os.Bundle
@@ -49,7 +47,7 @@ import kotlinx.android.synthetic.main.map_fragment.*
 //
 //}
 
-class MapFragment : Activity(), SensorEventListener {
+class MapFragment : Fragment(), SensorEventListener {
 
     private var sensorManager: SensorManager? = null
     private var stepSensor: Sensor? = null
@@ -57,23 +55,25 @@ class MapFragment : Activity(), SensorEventListener {
     private var steps: Float = 0.0f
     private var currSteps: Float = 0.0f
 
-
-    public override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.map_fragment)
-        sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.map_fragment, container, false)
+        sensorManager = activity?.getSystemService(Context.SENSOR_SERVICE) as SensorManager
         stepSensor = sensorManager!!.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)
-        val btn = findViewById<Button>(R.id.stepBtn)
+        val btn = view.findViewById<Button>(R.id.stepBtn)
         btn.setOnClickListener{
             oldSteps = steps
         }
+        return view
     }
 
     override fun onSensorChanged(event: SensorEvent) {
         steps = event.values[0]
         currSteps = steps - oldSteps
-        val counter = findViewById<TextView>(R.id.schrittzaehler)
-        counter.text = currSteps.toInt().toString()
+        val counter = view?.findViewById<TextView>(R.id.schrittzaehler)
+        counter?.text = currSteps.toInt().toString()
         // steps enthält die Anzahl der Schritte seit Systemneustart
         // speichern von steps bei Start des Laufens
         // steps - oldSteps = currentSteps

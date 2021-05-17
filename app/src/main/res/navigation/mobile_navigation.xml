@@ -17,7 +17,7 @@
             android:label="@string/title_team"
             tools:layout="@layout/team_fragment"/>
 
-    <activity
+    <fragment
             android:id="@+id/navigation_map"
             android:name="com.example.lok.ui.map.MapFragment"
             android:label="@string/title_map"
