@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/con8"/>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="80dp">
+
+        <ImageView
+                android:id="@+id/maxHP_img"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/hearts"/>
+        <TextView
+                android:id="@+id/maxHP_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="30sp"
+                android:text="10"
+                android:textSize="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/maxHP_img"/>
+
+        <ImageView
+                android:id="@+id/strength_img"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/maxHP_txt"
+                android:src="@drawable/strength"/>
+        <TextView
+                android:id="@+id/strength_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="30sp"
+                android:text="10"
+                android:textSize="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/strength_img"/>
+
+        <ImageView
+                android:id="@+id/defense_img"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/strength_txt"
+                android:src="@drawable/defense"/>
+        <TextView
+                android:id="@+id/defense_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="30sp"
+                android:text="10"
+                android:textSize="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/defense_img"/>
+
+        <ImageView
+                android:id="@+id/magic_img"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/defense_txt"
+                android:src="@drawable/magic"/>
+        <TextView
+                android:id="@+id/magic_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="30sp"
+                android:text="10"
+                android:textSize="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/magic_img"/>
+
+        <ImageView
+                android:id="@+id/magicdef_img"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/maxHP_img"
+                android:src="@drawable/magicdefense"/>
+        <TextView
+                android:id="@+id/magicdef_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="30sp"
+                android:text="10"
+                android:textSize="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/magicdef_img"
+                android:layout_below="@+id/maxHP_txt"/>
+
+
+        <ImageView
+                android:id="@+id/agility_img"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@id/strength_img"
+                android:layout_toRightOf="@+id/magicdef_txt"
+                android:src="@drawable/agility"/>
+        <TextView
+                android:id="@+id/agility_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="30sp"
+                android:text="10"
+                android:textSize="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/agility_img"
+                android:layout_below="@+id/strength_txt"/>
+
+        <ImageView
+                android:id="@+id/luck_img"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@id/defense_img"
+                android:layout_toRightOf="@+id/agility_txt"
+                android:src="@drawable/luck"/>
+        <TextView
+                android:id="@+id/luck_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="30sp"
+                android:text="10"
+                android:textSize="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/luck_img"
+                android:layout_below="@+id/defense_txt"/>
+    </RelativeLayout>
+
+    <ImageView
+            android:id="@+id/exp_bar"
+            android:src="@drawable/healthybar"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image"
+            android:scaleType="fitXY"/>
+
+    <ImageView
+            android:id="@+id/exp_curr"
+            android:src="@drawable/xp"
+            android:layout_width="10dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image"
+            android:scaleType="fitXY"/>
+
+    <TextView
+            android:id="@+id/exp_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/exp_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="+1000XP"
+            android:textSize="25sp"
+            android:textStyle="bold"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

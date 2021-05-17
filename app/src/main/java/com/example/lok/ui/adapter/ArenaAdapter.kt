@@ -47,7 +47,7 @@ class ArenaAdapter(context: Context, state: String) : BaseAdapter() {
         var newHP : Int
 
             if (mState == "hero"){
-                hero = data.getHero(data.myHeroes[position])
+                hero = data.getHero(data.activeTeam[position])
                 fighterImg.setImageResource(hero.image)
                 newHP = (345 * (hero.currHP / hero.maxHP))
                 status.layoutParams.width = newHP

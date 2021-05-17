@@ -18,6 +18,15 @@
 public class Hero extends Actor{
     private Skill skill;
     private Equip[] equipment;
+    private int exp;
+
+    public int getExp() {
+        return exp;
+    }
+
+    public void setExp(int exp) {
+        this.exp = exp;
+    }
 
     public Skill getSkill() {
         return skill;

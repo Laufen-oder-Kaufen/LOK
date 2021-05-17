@@ -14,8 +14,8 @@ import com.example.lok.R
 
 class LevelSelecterAdapter(context : Context, lvlprog : Int) : BaseAdapter() {
 
-    val mContext : Context
-    val mLvlprog : Int
+    private val mContext : Context
+    private val mLvlprog : Int
 
     init {
         mContext = context

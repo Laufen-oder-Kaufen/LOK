@@ -54,7 +54,7 @@ class TestData {
         val heroes = arrayListOf<Hero>(warrior, warrior2, warrior3, magician, magician2, magician3,
             ninja, ninja2, ninja3, tank, tank2, tank3)
         val enemies = arrayListOf<Monster>(enemy1, enemy2, enemy3)
-        val activeTeam = arrayListOf<Int>(32, 22, 12, 42)
+        val activeTeam = arrayListOf<Int>(32, 22, 12)
         val myHeroes = arrayListOf<Int>(4, 1, 2, 3, 41, 11, 21)
         val myEnemies = arrayListOf<Int>(101, 102, 103)
 
@@ -79,6 +79,8 @@ class TestData {
             }
             return myEnemy
         }
+
+        var diamonds : Int = 0
     }
 
     var companion = Companion

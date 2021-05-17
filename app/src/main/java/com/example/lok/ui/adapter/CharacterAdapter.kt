@@ -27,7 +27,7 @@ class CharacterAdapter(context: Context, count: Int, state: String): BaseAdapter
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val data = TestData()
         val layoutInflater:LayoutInflater = LayoutInflater.from(mContext)
-        val rowMain = layoutInflater.inflate(R.layout.row_team, parent, false)
+        val rowMain = layoutInflater.inflate(R.layout.team_griedview_element, parent, false)
         val imageView = rowMain.findViewById<ImageView>(R.id.row_team_image)
         val nameTextView = rowMain.findViewById<TextView>(R.id.row_team_name)
         val heroes: List<Int>

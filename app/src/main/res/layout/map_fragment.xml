@@ -7,8 +7,20 @@
         tools:context=".ui.map.MapFragment">
 
     <TextView
+            android:id="@+id/schrittzaehler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Hier wird schon bald eine Karte sein, welche Daten sammelt und sie an Zuckerberg verkauft"/>
+            android:text="1000"
+            android:gravity="center"
+            android:textSize="35sp"
+            android:textStyle="bold"/>
+
+    <Button
+            android:id="@+id/stepBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:text="Click"/>
 
 </FrameLayout>

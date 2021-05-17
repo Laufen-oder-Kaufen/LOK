@@ -8,6 +8,7 @@ import android.widget.ListView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.view.get
 import com.example.lok.ui.adapter.ArenaAdapter
 
 class ArenaActivity : AppCompatActivity() {
