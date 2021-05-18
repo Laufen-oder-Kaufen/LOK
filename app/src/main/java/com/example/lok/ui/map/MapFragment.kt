@@ -15,6 +15,12 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import com.example.lok.R
+import com.mapbox.mapboxsdk.Mapbox
+import com.mapbox.mapboxsdk.maps.MapView
+import com.mapbox.mapboxsdk.maps.MapboxMap
+import com.mapbox.mapboxsdk.maps.OnMapReadyCallback
+import com.mapbox.mapboxsdk.maps.Style
+import kotlinx.android.synthetic.main.map_fragment.*
 
 //import androidx.lifecycle.ViewModelProviders
 //import android.os.Bundle
@@ -46,9 +52,14 @@ import com.example.lok.R
 //    }
 //
 //}
+class MapFragment : Fragment(), OnMapReadyCallback {
 
+    private lateinit var mapbox: MapboxMap
 class MapFragment : Fragment(), SensorEventListener {
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+    }
     private var sensorManager: SensorManager? = null
     private var stepSensor: Sensor? = null
     private var oldSteps: Float = 0.0f
@@ -59,6 +70,47 @@ class MapFragment : Fragment(), SensorEventListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        Mapbox.getInstance(requireContext(), R.string.mapbox_access_token.toString())
+        val view: View = inflater.inflate(R.layout.map_fragment, container, false)
+        val mapView = view.findViewById<MapView>(R.id.mapView)
+        mapView.onCreate(savedInstanceState)
+        mapView.onResume()
+        mapView.getMapAsync(this)
+        return view
+    }
+
+    override fun onMapReady(mapboxMap: MapboxMap) {
+        mapboxMap.setStyle(Style.MAPBOX_STREETS)
+        mapboxMap?.let{
+            mapbox = it
+        }
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+        mapView.onStart()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mapView.onResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        mapView.onPause()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        mapView.onStop()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mapView.onDestroy()
         val view = inflater.inflate(R.layout.map_fragment, container, false)
         sensorManager = activity?.getSystemService(Context.SENSOR_SERVICE) as SensorManager
         stepSensor = sensorManager!!.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)
@@ -84,11 +136,18 @@ class MapFragment : Fragment(), SensorEventListener {
         TODO("Not yet implemented")
     }
 
+    override fun onLowMemory() {
+        super.onLowMemory()
+        mapView.onLowMemory()
     override fun onResume() {
         super.onResume()
         sensorManager!!.registerListener(this, stepSensor, SensorManager.SENSOR_DELAY_NORMAL)
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        mapView.onSaveInstanceState(outState)
+    }
     override fun onPause() {
         super.onPause()
         sensorManager!!.unregisterListener(this)
