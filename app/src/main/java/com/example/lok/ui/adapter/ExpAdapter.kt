@@ -1,6 +1,5 @@
 package com.example.lok.ui.adapter
 
-import Monster
 import android.content.Context
 import android.content.Context.WINDOW_SERVICE
 import android.util.DisplayMetrics

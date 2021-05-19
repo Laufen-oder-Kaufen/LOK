@@ -8,7 +8,7 @@ package com.example.lok;
  * icon
  * cd: cool down time of the skill
  */
-abstract class Skill extends MenuActor{
+public abstract class Skill extends MenuActor{
     private int cd;
 
     abstract void skillEffect();

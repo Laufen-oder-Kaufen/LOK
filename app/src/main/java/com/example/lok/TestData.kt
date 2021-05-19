@@ -26,15 +26,15 @@ class TestData {
             100, 100, 15, 12, 0, 3, 8, 8
         ) **/
 
-        var nullHero = Hero("NULL", 0, "W", "C", 0, 0, 0, 0, 0, 0, 0, images.get(8), images.get(8))
+        var nullHero = Hero("NULL", 0, "W", "C", 0, 0, 0, 0, 0, 0, 0, images.get(8), images.get(8), 0)
         var nullEnemy = Monster("NULL", 0, "W", "C", 0, 0, 0, 0, 0, 0, 0, images.get(9), images.get(9))
 
 
 
-        var Claude = Hero("Claude", 1, "W", "C", 40, 15, 0, 5, 5, 5, 5, images.get(1), images.get(1))
-        var Clive = Hero("Clive", 2, "A", "C", 30, 12, 0, 10, 10, 15, 15, images.get(2), images.get(2))
-        var Claudia = Hero("Claudia", 3, "M", "C", 25, 0, 15, 5, 20, 5, 5, images.get(3), images.get(3))
-        var Ulfred = Hero("Ulfred", 4, "W", "U", 40, 15, 0, 15, 5, 5, 5, images.get(4), images.get(4))
+        var Claude = Hero("Claude", 1, "W", "C", 40, 15, 0, 5, 5, 5, 5, images.get(1), images.get(1),0)
+        var Clive = Hero("Clive", 2, "A", "C", 30, 12, 0, 10, 10, 15, 15, images.get(2), images.get(2),0)
+        var Claudia = Hero("Claudia", 3, "M", "C", 25, 0, 15, 5, 20, 5, 5, images.get(3), images.get(3),0)
+        var Ulfred = Hero("Ulfred", 4, "W", "U", 40, 15, 0, 15, 5, 5, 5, images.get(4), images.get(4),0)
 
         var Bat = Monster("Bat", 101, "W", "C", 40, 15, 0, 5, 5, 5, 5, images.get(12), images.get(12))
         var Goblin = Monster("Goblin", 102, "W", "C", 40, 15, 0, 5, 5, 5, 5, images.get(13), images.get(13))
@@ -51,7 +51,7 @@ class TestData {
         } **/
 
 
-
+        var diamonds = 0
 
 
 
