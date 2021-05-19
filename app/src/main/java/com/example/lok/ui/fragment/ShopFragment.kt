@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.Toast
 import com.example.lok.R
 import android.widget.TextView
 import com.example.lok.TestData
@@ -26,34 +25,29 @@ class ShopFragment : Fragment() {
         val btn50 = view.findViewById<Button>(R.id.btn50)
         val btn100 = view.findViewById<Button>(R.id.btn100)
         var diamonds = view.findViewById<TextView>(R.id.myDiamonds)
-        diamonds.text = TestData().companion.diamonds.toString()
+        diamonds.text = TestData().companion.getDiamonds().toString()
 
         btn1.setOnClickListener{
-            buyDiamonds(1)
+            TestData().companion.buyDiamonds(1)
             it.invalidate()
         }
         btn5.setOnClickListener{
-            buyDiamonds(5)
+            TestData().companion.buyDiamonds(5)
             it.refreshDrawableState()
         }
         btn10.setOnClickListener{
-            buyDiamonds(10)
+            TestData().companion.buyDiamonds(10)
             it.requestLayout()
         }
         btn25.setOnClickListener{
-            buyDiamonds(25)
+            TestData().companion.buyDiamonds(25)
         }
         btn50.setOnClickListener{
-            buyDiamonds(50)
+            TestData().companion.buyDiamonds(50)
         }
         btn100.setOnClickListener{
-            buyDiamonds(100)
+            TestData().companion.buyDiamonds(100)
         }
         return view
-    }
-
-    fun buyDiamonds(amount: Int){
-        TestData().companion.diamonds += amount
-        Toast.makeText(requireContext(), "Purchase successful", Toast.LENGTH_LONG).show()
     }
 }

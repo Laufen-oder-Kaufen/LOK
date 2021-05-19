@@ -19,7 +19,6 @@ package com.example.lok;
  */
 public class Hero extends Actor {
     private Skill skill;
-    private Equip[] equipment;
     private int exp;
 
     public int getExp() {
@@ -34,40 +33,8 @@ public class Hero extends Actor {
         return skill;
     }
 
-    public Equip[] getEquipment() {
-        return equipment;
-    }
-
     public void setSkill(Skill skill) {
         this.skill = skill;
-    }
-
-    public void setEquipment(int i, Equip equip) {
-        this.equipment[i] = equip;
-    }
-
-    public int[] getEquipmentModifiers(){
-        int maxHP;
-        int currHP;
-        int str;
-        int def;
-        int mag;
-        int mdf;
-        int agi;
-        int luk;
-        int[] result = {0, 0, 0, 0, 0, 0, 0, 0};
-        for (Equip e:
-             this.equipment) {
-            result[1] += e.getMaxHP();
-            result[2] += e.getCurrHP();
-            result[3] += e.getStr();
-            result[4] += e.getDef();
-            result[5] += e.getMag();
-            result[6] += e.getMdf();
-            result[7] += e.getAgi();
-            result[8] += e.getLuk();
-        }
-        return result;
     }
 
     public Hero(String name, int id, String type, String rarity, int maxHP, int str, int mag, int def, int mdf, int agi, int luk, int image, int icon, int exp) {

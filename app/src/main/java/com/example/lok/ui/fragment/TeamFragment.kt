@@ -12,11 +12,6 @@ import com.example.lok.ui.adapter.CharacterAdapter
 
 class TeamFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = TeamFragment()
-    }
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -24,7 +19,6 @@ class TeamFragment : Fragment() {
         val view = inflater.inflate(R.layout.team_fragment, container, false)
         val allTeam = view.findViewById<GridView>(R.id.teamGridView)
         val activeTeam = view.findViewById<GridView>(R.id.activeTeamGridView)
-
         allTeam.adapter = CharacterAdapter(requireContext(), TestData.myHeroes.size, "all")
         activeTeam.adapter = CharacterAdapter(requireContext(), 3, "active")
         return view

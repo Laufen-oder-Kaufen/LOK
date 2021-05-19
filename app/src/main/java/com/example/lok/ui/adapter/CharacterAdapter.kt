@@ -42,7 +42,7 @@ class CharacterAdapter(context: Context, count: Int, state: String): BaseAdapter
             imageView.setImageResource(myHero.image)
             nameTextView.text = myHero.name
             imageView.setOnClickListener{
-                val view = layoutInflater.inflate(R.layout.popup, null)
+                val view = layoutInflater.inflate(R.layout.team_element_popup, null)
                 view.findViewById<ImageView>(R.id.popup_image).setImageResource(myHero.image)
                 view.findViewById<TextView>(R.id.popup_name_text).text = myHero.name
                 view.findViewById<TextView>(R.id.popup_class_text).text = myHero.type

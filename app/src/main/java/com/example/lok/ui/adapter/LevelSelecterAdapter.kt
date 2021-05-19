@@ -36,7 +36,7 @@ class LevelSelecterAdapter(context : Context, lvlprog : Int) : BaseAdapter() {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val layoutInflater: LayoutInflater = LayoutInflater.from(mContext)
-        val view = layoutInflater.inflate(R.layout.level_card, null)
+        val view = layoutInflater.inflate(R.layout.level_selecter_element, null)
         val lvlnr = view.findViewById<TextView>(R.id.levelnr)
         val lvlstatus = view.findViewById<ImageView>(R.id.levelimg)
 

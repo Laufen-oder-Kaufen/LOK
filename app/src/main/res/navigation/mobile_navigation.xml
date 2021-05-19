@@ -19,9 +19,9 @@
 
     <fragment
             android:id="@+id/navigation_map"
-            android:name="com.example.lok.ui.fragment.MapFragment"
-            android:label="@string/title_map"
-            tools:layout="@layout/map_fragment"/>
+            android:name="com.example.lok.ui.fragment.ItemFragment"
+            android:label="@string/title_item"
+            tools:layout="@layout/item_fragment"/>
 
     <fragment
             android:id="@+id/navigation_gacha"

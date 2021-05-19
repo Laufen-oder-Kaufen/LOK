@@ -16,6 +16,7 @@
                 android:id="@+id/fightBtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@drawable/background_images"
                 android:src="@drawable/swords" />
 
     </LinearLayout>
@@ -59,18 +60,21 @@
                 android:id="@+id/skillBtn1"
                 android:layout_width="130dp"
                 android:layout_height="match_parent"
-                android:text="com.example.lok.Skill 1"/>
+                android:background="@drawable/background_images"
+                android:text="Skill 1"/>
         <Button
                 android:id="@+id/skillBtn2"
                 android:layout_width="130dp"
                 android:layout_height="match_parent"
-                android:text="com.example.lok.Skill 2"
+                android:background="@drawable/background_images"
+                android:text="Skill 2"
                 android:layout_marginHorizontal="10dp"/>
         <Button
                 android:id="@+id/skillBtn3"
                 android:layout_width="130dp"
                 android:layout_height="match_parent"
-                android:text="com.example.lok.Skill 3"/>
+                android:background="@drawable/background_images"
+                android:text="Skill 3"/>
 
     </LinearLayout>
 

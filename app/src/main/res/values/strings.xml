@@ -5,6 +5,6 @@
     <string name="title_shop">Shop</string>
     <string name="title_team">Team</string>
     <string name="title_arena">Arena</string>
-    <string name="title_map">Map</string>
+    <string name="title_item">Item</string>
     <string name="title_gacha">Gacha</string>
 </resources>

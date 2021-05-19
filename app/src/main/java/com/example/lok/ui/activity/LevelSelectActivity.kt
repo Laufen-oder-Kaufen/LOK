@@ -10,7 +10,7 @@ class LevelSelectActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.level_selecter)
+        setContentView(R.layout.level_selecter_layout)
         val grid = findViewById<GridView>(R.id.levels)
         grid.adapter = LevelSelecterAdapter(this, 5)
     }
