@@ -1,6 +1,6 @@
 package com.example.lok.ui.adapter
 
-import Hero
+import com.example.lok.Hero
 import android.content.Context
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -72,7 +72,7 @@ class CharacterAdapter(context: Context, count: Int, state: String): BaseAdapter
                         data.companion.activeTeam.remove(myHero.id)
                         popup.dismiss()
                     }else{
-                        Toast.makeText(mContext, "You need at least 1 Hero", Toast.LENGTH_LONG).show()
+                        Toast.makeText(mContext, "You need at least 1 com.example.lok.Hero", Toast.LENGTH_LONG).show()
                     }
                     if(mState == "all") {
                         data.companion.myHeroes.remove(myHero.id)

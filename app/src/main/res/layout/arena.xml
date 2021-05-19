@@ -11,15 +11,8 @@
             android:layout_height="0dip"
             android:layout_weight="0.15">
 
-        <TextView
-                android:id="@+id/arenaTextBox"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/board"
-                android:text="Hier werden Kampfinformationen wiedergegeben"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textColor="#000000"/>
+
+        <ImageButton android:id="@+id/fightBtn" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/swords" />
 
     </LinearLayout>
     <LinearLayout
@@ -62,18 +55,18 @@
                 android:id="@+id/skillBtn1"
                 android:layout_width="130dp"
                 android:layout_height="match_parent"
-                android:text="Skill 1"/>
+                android:text="com.example.lok.Skill 1"/>
         <Button
                 android:id="@+id/skillBtn2"
                 android:layout_width="130dp"
                 android:layout_height="match_parent"
-                android:text="Skill 2"
+                android:text="com.example.lok.Skill 2"
                 android:layout_marginHorizontal="10dp"/>
         <Button
                 android:id="@+id/skillBtn3"
                 android:layout_width="130dp"
                 android:layout_height="match_parent"
-                android:text="Skill 3"/>
+                android:text="com.example.lok.Skill 3"/>
 
     </LinearLayout>
 

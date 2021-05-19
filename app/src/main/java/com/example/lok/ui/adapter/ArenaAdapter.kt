@@ -1,7 +1,5 @@
 package com.example.lok.ui.adapter
 
-import Hero
-import Monster
 import android.content.Context
 import android.graphics.ColorMatrix
 import android.graphics.ColorMatrixColorFilter
@@ -10,8 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
-import com.example.lok.R
-import com.example.lok.TestData
+import com.example.lok.*
+import com.example.lok.TestData.Companion.heroes
+import java.util.*
 
 class ArenaAdapter(context: Context, state: String) : BaseAdapter() {
 
@@ -46,20 +45,48 @@ class ArenaAdapter(context: Context, state: String) : BaseAdapter() {
         val enemy : Monster
         var newHP : Int
 
+
             if (mState == "hero"){
-                hero = data.getHero(data.myHeroes[position])
+                hero = data.getHero(data.activeTeam[position])
                 fighterImg.setImageResource(hero.image)
-                newHP = (345 * (hero.currHP / hero.maxHP))
+                val percentage : Float =  ((hero.currHP.toFloat()/hero.maxHP.toFloat()))
+                newHP = (percentage * 345).toInt()
                 status.layoutParams.width = newHP
+
+                if(newHP <= 1){
+                    newHP = 1
+                    statusImg.setImageResource(R.drawable.skull)
+                    val gray = ColorMatrix()
+                    gray.setSaturation(0f)
+                    val cf = ColorMatrixColorFilter(gray)
+                    fighterImg.colorFilter = cf
+                    fighterImg.imageAlpha = 128
+                }
+
+
             }else{
                 enemy = data.getEnemy(data.myEnemies[position])
                 fighterImg.setImageResource(enemy.image)
-                newHP = (345 * (enemy.currHP / enemy.maxHP))
+                val percentage : Float =  enemy.currHP.toFloat()/enemy.maxHP.toFloat()
+                newHP = (percentage * 345).toInt()
                 status.layoutParams.width = newHP
+
+                if(newHP <= 1){
+                    newHP = 1
+                    statusImg.setImageResource(R.drawable.skull)
+                    val gray = ColorMatrix()
+                    gray.setSaturation(0f)
+                    val cf = ColorMatrixColorFilter(gray)
+                    fighterImg.colorFilter = cf
+                    fighterImg.imageAlpha = 128
+                }
+
             }
 
+
+
             slotItem.setOnClickListener{
-                newHP -= 50
+                newHP -= 10
                 if(newHP <= 1){
                     newHP = 1
                     statusImg.setImageResource(R.drawable.skull)

@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 //            } else{
 //                popup.showAtLocation(lvlView, Gravity.CENTER, 0, 0)
 //            }
-            Toast.makeText(applicationContext, "Starte Battle Arena", Toast.LENGTH_LONG).show()
+            Toast.makeText(applicationContext, "Starte com.example.lok.Battle Arena", Toast.LENGTH_LONG).show()
         }
 
         // Passing each menu ID as a set of Ids because each

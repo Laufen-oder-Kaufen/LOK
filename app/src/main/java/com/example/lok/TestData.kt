@@ -1,10 +1,16 @@
 package com.example.lok
 
-import Hero
-import Monster
-import java.util.ArrayList
-
 class TestData {
+
+    /**
+     * TODO:
+     * Alle Helden und com.example.lok.Monster werden in jeweiligen Klassen festgehalten und via ID abgerufen
+     * Es wird vom Server abgefragt, welche Helden man besitzt + die jeweiligen Ausrüstungsgegenstände und Level
+     *
+     * Aktives Team wird vom Server gelesen und anschließend auf dem Server gespeichert
+     *
+     *
+     * **/
 
     companion object{
 
@@ -15,47 +21,44 @@ class TestData {
             R.drawable.con23, R.drawable.con24, R.drawable.con25,
             R.drawable.con26, R.drawable.con27, R.drawable.con28)
 
-        val warrior = Hero(4, "Sir Grauselig", images.get(0), images.get(0), "Warrior",
-            100, 100, 15, 12, 0, 3, 8, 8)
-        val magician = Hero(1, "Grindelwald", images.get(5), images.get(5), "Magician",
-            100, 100, 5, 5, 15, 13, 4, 12)
-        val ninja = Hero(2,"Yamato", images.get(1), images.get(1), "Ninja",
-            100, 100, 10, 8, 5, 5, 15, 15)
-        val tank = Hero(3, "Hulk", images.get(3), images.get(3), "Tank",
-            200, 200, 25, 20, 0, 0, 2, 8)
-        val warrior2 = Hero(41, "Mrs Grauselig", images.get(2), images.get(2), "Warrior",
-            100, 100, 15, 12, 0, 3, 8, 8)
-        val magician2 = Hero(11, "Grantelwald", images.get(8), images.get(8), "Magician",
-            100, 100, 5, 5, 15, 13, 4, 12)
-        val ninja2 = Hero(21,"Shusui", images.get(9), images.get(9), "Ninja",
-            100, 100, 10, 8, 5, 5, 15, 15)
-        val tank2 = Hero(31, "Harvel", images.get(11), images.get(11), "Tank",
-            200, 200, 25, 20, 0, 0, 2, 8)
-        val warrior3 = Hero(42, "Mrs Grauselig Sr", images.get(2), images.get(2), "Warrior",
-            100, 100, 15, 12, 0, 3, 8, 8)
-        val magician3 = Hero(12, "Grantelwald Sr", images.get(8), images.get(8), "Magician",
-            100, 100, 5, 5, 15, 13, 4, 12)
-        val ninja3 = Hero(22,"Shusui Sr", images.get(9), images.get(9), "Ninja",
-            100, 100, 10, 8, 5, 5, 15, 15)
-        val tank3 = Hero(32, "Harvel Sr", images.get(11), images.get(11), "Tank",
-            200, 200, 25, 20, 0, 0, 2, 8)
-        val nullHero = Hero(999, "NULL", images.get(14), images.get(14), "NULL",
-            1,1,0,0,0,0,0,0)
+  /**      val warrior = Hero(
+            4, "Sir Grauselig", images.get(0), images.get(0), "Warrior",
+            100, 100, 15, 12, 0, 3, 8, 8
+        ) **/
 
-        val enemy1 = Monster(101, "Harvel", images.get(11), images.get(11), "NULL",
-            100,100,0,0,0,0,0,0)
-        val enemy2 = Monster(102, "Trump", images.get(3), images.get(3), "NULL",
-            100,100,0,0,0,0,0,0)
-        val enemy3 = Monster(103, "Pikachu", images.get(12), images.get(12), "NULL",
-            100,100,0,0,0,0,0,0)
-        val nullEnemy = Monster(199, "NULL", images.get(14), images.get(14), "NULL",
-            0,0,0,0,0,0,0,0)
+        var nullHero = Hero("NULL", 0, "W", "C", 0, 0, 0, 0, 0, 0, 0, images.get(8), images.get(8))
+        var nullEnemy = Monster("NULL", 0, "W", "C", 0, 0, 0, 0, 0, 0, 0, images.get(9), images.get(9))
 
-        val heroes = arrayListOf<Hero>(warrior, warrior2, warrior3, magician, magician2, magician3,
-            ninja, ninja2, ninja3, tank, tank2, tank3)
-        val enemies = arrayListOf<Monster>(enemy1, enemy2, enemy3)
-        val activeTeam = arrayListOf<Int>(32, 22, 12, 42)
-        val myHeroes = arrayListOf<Int>(4, 1, 2, 3, 41, 11, 21)
+
+
+        var Claude = Hero("Claude", 1, "W", "C", 40, 15, 0, 5, 5, 5, 5, images.get(1), images.get(1))
+        var Clive = Hero("Clive", 2, "A", "C", 30, 12, 0, 10, 10, 15, 15, images.get(2), images.get(2))
+        var Claudia = Hero("Claudia", 3, "M", "C", 25, 0, 15, 5, 20, 5, 5, images.get(3), images.get(3))
+        var Ulfred = Hero("Ulfred", 4, "W", "U", 40, 15, 0, 15, 5, 5, 5, images.get(4), images.get(4))
+
+        var Bat = Monster("Bat", 101, "W", "C", 40, 15, 0, 5, 5, 5, 5, images.get(12), images.get(12))
+        var Goblin = Monster("Goblin", 102, "W", "C", 40, 15, 0, 5, 5, 5, 5, images.get(13), images.get(13))
+        var Zombie = Monster("Zombie", 103, "W", "C", 40, 15, 0, 5, 5, 5, 5, images.get(14), images.get(14))
+
+  /**      val spielerdaten = {name, id, gold, level, erfahrung} //jup
+        var aktive Helden = {33, 2, 5} // auch geladen
+        var heldenbesitz = {33,2,5,7,3,8,336} // auch geladen
+        heldenlevel {(33, 10, 500),(20, 110, 800)} // muss vom Server geladen werden
+
+        Objekt SPIELERDATEN = {
+            spielerdaten, aktiveHelden, heldenBesitz, heldenLevel
+
+        } **/
+
+
+
+
+
+
+        val heroes = arrayListOf<Hero>(Claude, Clive, Claudia, Ulfred)
+        val enemies = arrayListOf<Monster>(Bat, Goblin, Zombie)
+        val activeTeam = arrayListOf<Int>(1,2,3)
+        val myHeroes = arrayListOf<Int>(4)
         val myEnemies = arrayListOf<Int>(101, 102, 103)
 
         fun getHero(heroId: Int): Hero {

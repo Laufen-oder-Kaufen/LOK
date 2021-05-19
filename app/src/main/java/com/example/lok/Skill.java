@@ -1,5 +1,7 @@
+package com.example.lok;
+
 /***
- * the class Skill describes active hero skills
+ * the class com.example.lok.Skill describes active hero skills
  *
  * id
  * name

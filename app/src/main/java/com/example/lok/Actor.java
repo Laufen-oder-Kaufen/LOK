@@ -1,5 +1,7 @@
+package com.example.lok;
+
 /***
- * The abstract class Actor represents either monsters or heroes or equip
+ * The abstract class com.example.lok.Actor represents either monsters or heroes or equip
  *
  * id
  * name
@@ -35,8 +37,9 @@
  *  weapon common - weapons for everyone
  *  accessories and talismans are equippable by everyone
  */
-abstract class Actor extends MenuActor {
+abstract public class Actor extends MenuActor {
     private String type;
+    private String rarity;
     private int maxHP = 0;
     private int currHP = 0;
     private int str = 0;
@@ -46,17 +49,28 @@ abstract class Actor extends MenuActor {
     private int agi = 0;
     private int luk = 0;
 
-    public Actor(int id, String name, int image, int icon, String type, int maxHP, int currHP, int str, int def, int mag, int mdf, int agi, int luk) {
+
+
+    public Actor(String name, int id, String type, String rarity, int maxHP, int str, int mag, int def, int mdf, int agi, int luk, int image, int icon) {
         super(id, name, image, icon);
         this.type = type;
+        this.rarity = rarity;
         this.maxHP = maxHP;
-        this.currHP = currHP;
+        this.currHP = maxHP;
         this.str = str;
         this.def = def;
         this.mag = mag;
         this.mdf = mdf;
         this.agi = agi;
         this.luk = luk;
+    }
+
+    public String getRarity() {
+        return rarity;
+    }
+
+    public void setRarity(String rarity) {
+        this.rarity = rarity;
     }
 
     public String getType() {
@@ -94,4 +108,40 @@ abstract class Actor extends MenuActor {
     public int getLuk() {
         return luk;
     }
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setMaxHP(int maxHP) {
+        this.maxHP = maxHP;
+    }
+
+    public void setCurrHP(int currHP) {
+        this.currHP = currHP;
+    }
+
+    public void setStr(int str) {
+        this.str = str;
+    }
+
+    public void setDef(int def) {
+        this.def = def;
+    }
+
+    public void setMag(int mag) {
+        this.mag = mag;
+    }
+
+    public void setMdf(int mdf) {
+        this.mdf = mdf;
+    }
+
+    public void setAgi(int agi) {
+        this.agi = agi;
+    }
+
+    public void setLuk(int luk) {
+        this.luk = luk;
+    }
 }
+
