@@ -15,6 +15,8 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import com.example.lok.R
+import java.text.DateFormat
+import java.util.*
 
 //import androidx.lifecycle.ViewModelProviders
 //import android.os.Bundle
@@ -54,6 +56,9 @@ class MapFragment : Fragment(), SensorEventListener {
     private var oldSteps: Float = 0.0f
     private var steps: Float = 0.0f
     private var currSteps: Float = 0.0f
+    private var hasStarted: Boolean = false
+    private var startTime: Date? = Date()
+    private var endTime: Date? = Date()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -64,20 +69,28 @@ class MapFragment : Fragment(), SensorEventListener {
         stepSensor = sensorManager!!.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)
         val btn = view.findViewById<Button>(R.id.stepBtn)
         btn.setOnClickListener{
-            oldSteps = steps
+            val button = view?.findViewById<Button>(R.id.schrittzaehler)
+            if (!hasStarted) {
+                oldSteps = steps
+                hasStarted = true
+                startTime = Date()
+                button?.text = "Stop"
+            } else {
+                hasStarted = false;
+                endTime = Date()
+                button?.text = "Start"
+            }
         }
         return view
     }
 
     override fun onSensorChanged(event: SensorEvent) {
         steps = event.values[0]
-        currSteps = steps - oldSteps
-        val counter = view?.findViewById<TextView>(R.id.schrittzaehler)
-        counter?.text = currSteps.toInt().toString()
-        // steps enthält die Anzahl der Schritte seit Systemneustart
-        // speichern von steps bei Start des Laufens
-        // steps - oldSteps = currentSteps
-        // if(currentSteps<=10000){ [punkte] = currentSteps/1000 } else { [punkte] = 10 }
+        if(hasStarted) {
+            currSteps = steps - oldSteps
+            val counter = view?.findViewById<TextView>(R.id.schrittzaehler)
+            counter?.text = currSteps.toInt().toString()
+        }
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
