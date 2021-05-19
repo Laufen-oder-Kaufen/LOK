@@ -7,25 +7,25 @@
 
     <fragment
             android:id="@+id/navigation_shop"
-            android:name="com.example.lok.ui.shop.ShopFragment"
+            android:name="com.example.lok.ui.fragment.ShopFragment"
             android:label="@string/title_shop"
             tools:layout="@layout/shop_fragment"/>
 
     <fragment
             android:id="@+id/navigation_team"
-            android:name="com.example.lok.ui.team.TeamFragment"
+            android:name="com.example.lok.ui.fragment.TeamFragment"
             android:label="@string/title_team"
             tools:layout="@layout/team_fragment"/>
 
     <fragment
             android:id="@+id/navigation_map"
-            android:name="com.example.lok.ui.map.MapFragment"
+            android:name="com.example.lok.ui.fragment.MapFragment"
             android:label="@string/title_map"
             tools:layout="@layout/map_fragment"/>
 
     <fragment
             android:id="@+id/navigation_gacha"
-            android:name="com.example.lok.ui.gacha.GachaFragment"
+            android:name="com.example.lok.ui.fragment.GachaFragment"
             android:label="@string/title_gacha"
             tools:layout="@layout/gacha_fragment"/>
 

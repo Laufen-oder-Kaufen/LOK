@@ -1,4 +1,4 @@
-package com.example.lok.ui.map
+package com.example.lok.ui.fragment
 
 import android.hardware.SensorManager
 import android.hardware.SensorEvent

@@ -9,12 +9,12 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".ArenaActivity"/>
-        <activity android:name=".LevelSelectActivity"/>
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".ExpActivity"/>
+        <activity android:name=".ui.activity.ArenaActivity"/>
+        <activity android:name=".ui.activity.LevelSelectActivity"/>
+        <activity android:name=".ui.activity.MainActivity"/>
+        <activity android:name=".ui.activity.ExpActivity"/>
         <activity
-                android:name=".LoginActivity"
+                android:name=".ui.activity.LoginActivity"
                 android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

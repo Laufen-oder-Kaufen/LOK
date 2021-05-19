@@ -29,8 +29,6 @@ class TestData {
         var nullHero = Hero("NULL", 0, "W", "C", 0, 0, 0, 0, 0, 0, 0, images.get(8), images.get(8), 0)
         var nullEnemy = Monster("NULL", 0, "W", "C", 0, 0, 0, 0, 0, 0, 0, images.get(9), images.get(9))
 
-
-
         var Claude = Hero("Claude", 1, "W", "C", 40, 15, 0, 5, 5, 5, 5, images.get(1), images.get(1),0)
         var Clive = Hero("Clive", 2, "A", "C", 30, 12, 0, 10, 10, 15, 15, images.get(2), images.get(2),0)
         var Claudia = Hero("Claudia", 3, "M", "C", 25, 0, 15, 5, 20, 5, 5, images.get(3), images.get(3),0)

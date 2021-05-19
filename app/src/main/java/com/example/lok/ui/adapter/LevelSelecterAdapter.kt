@@ -9,7 +9,7 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
-import com.example.lok.ArenaActivity
+import com.example.lok.ui.activity.ArenaActivity
 import com.example.lok.R
 
 class LevelSelecterAdapter(context : Context, lvlprog : Int) : BaseAdapter() {
