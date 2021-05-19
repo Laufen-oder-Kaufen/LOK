@@ -18,15 +18,6 @@
 public class Hero extends Actor{
     private Skill skill;
     private Equip[] equipment;
-    private int exp;
-
-    public int getExp() {
-        return exp;
-    }
-
-    public void setExp(int exp) {
-        this.exp = exp;
-    }
 
     public Skill getSkill() {
         return skill;
@@ -68,7 +59,7 @@ public class Hero extends Actor{
         return result;
     }
 
-    public Hero(int id, String name, int image, int icon, String type, int maxHP, int currHP, int str, int def, int mag, int mdf, int agi, int luk, int exp) {
+    public Hero(int id, String name, int image, int icon, String type, int maxHP, int currHP, int str, int def, int mag, int mdf, int agi, int luk) {
         super(id, name, image, icon, type, maxHP, currHP, str, def, mag, mdf, agi, luk);
     }
 }

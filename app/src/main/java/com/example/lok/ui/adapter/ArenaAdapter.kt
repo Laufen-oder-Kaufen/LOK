@@ -27,7 +27,11 @@ class ArenaAdapter(context: Context, state: String) : BaseAdapter() {
     }
 
     override fun getItem(position: Int): Any {
-        TODO("Not yet implemented")
+        if(mState == "hero"){
+            return TestData().companion.getHero(position)
+        }else{
+            return TestData().companion.getEnemy(position)
+        }
     }
 
     override fun getItemId(position: Int): Long {
@@ -99,7 +103,6 @@ class ArenaAdapter(context: Context, state: String) : BaseAdapter() {
                 status.layoutParams.width = newHP
                 status.requestLayout()
             }
-
         return slotItem
     }
 }

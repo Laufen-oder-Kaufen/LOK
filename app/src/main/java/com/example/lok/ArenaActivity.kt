@@ -5,11 +5,20 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.widget.ImageButton
+import android.content.Intent
+import android.graphics.ColorMatrix
+import android.graphics.ColorMatrixColorFilter
+import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.lok.TestData.Companion.activeTeam
 import com.example.lok.TestData.Companion.getEnemy
 import com.example.lok.TestData.Companion.getHero
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.view.get
+
 import com.example.lok.ui.adapter.ArenaAdapter
 import kotlinx.android.synthetic.main.arena.*
 import java.util.*

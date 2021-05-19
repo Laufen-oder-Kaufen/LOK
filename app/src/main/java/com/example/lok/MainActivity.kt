@@ -23,21 +23,7 @@ class MainActivity : AppCompatActivity() {
             Intent(this, LevelSelectActivity::class.java).also {
                 startActivity(it, null)
             }
-//            val lvlView = layoutInflater.inflate(R.layout.level_selecter, null)
-//            val lvlGrid = lvlView.findViewById<GridView>(R.id.levels)
-//            lvlGrid.adapter = LevelSelecterAdapter(this, 5)
-//            val popup = PopupWindow(lvlView, ConstraintLayout.LayoutParams.WRAP_CONTENT, ConstraintLayout.LayoutParams.WRAP_CONTENT)
-//            popup.showAtLocation(it, Gravity.CENTER, 0, 0)
-
-//            val lvlGrid = lvlView.findViewById<GridView>(R.id.levels)
-//            lvlGrid.adapter = LevelSelecterAdapter(this, 5)
-//            val popup = PopupWindow(lvlView, ConstraintLayout.LayoutParams.WRAP_CONTENT, ConstraintLayout.LayoutParams.WRAP_CONTENT)
-//            if(lvlView.parent != null){
-//                popup.dismiss()
-//            } else{
-//                popup.showAtLocation(lvlView, Gravity.CENTER, 0, 0)
-//            }
-            Toast.makeText(applicationContext, "Starte com.example.lok.Battle Arena", Toast.LENGTH_LONG).show()
+            Toast.makeText(applicationContext, "Starte Battle Arena", Toast.LENGTH_LONG).show()
         }
 
         // Passing each menu ID as a set of Ids because each

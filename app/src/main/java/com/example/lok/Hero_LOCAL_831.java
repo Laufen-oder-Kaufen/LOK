@@ -1,5 +1,7 @@
+package com.example.lok;
+
 /***
- * the public class Hero represents every hero
+ * the public class com.example.lok.Hero represents every hero
  *
  * skill: the usable hero skill
  * equipment: the array of equipment slots
@@ -18,15 +20,6 @@
 public class Hero extends Actor{
     private Skill skill;
     private Equip[] equipment;
-    private int exp;
-
-    public int getExp() {
-        return exp;
-    }
-
-    public void setExp(int exp) {
-        this.exp = exp;
-    }
 
     public Skill getSkill() {
         return skill;
@@ -68,7 +61,7 @@ public class Hero extends Actor{
         return result;
     }
 
-    public Hero(int id, String name, int image, int icon, String type, int maxHP, int currHP, int str, int def, int mag, int mdf, int agi, int luk, int exp) {
-        super(id, name, image, icon, type, maxHP, currHP, str, def, mag, mdf, agi, luk);
+    public Hero(String name, int id, String type, String rarity, int maxHP, int str, int mag, int def, int mdf, int agi, int luk, int image, int icon) {
+        super(name, id,type,rarity, maxHP, str,  mag,  def,  mdf,  agi,  luk,  image,  icon);
     }
 }
