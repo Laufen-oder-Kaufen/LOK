@@ -11,12 +11,12 @@
             android:layout_height="0dip"
             android:layout_weight="0.15">
 
-        <TextView
-                android:id="@+id/arenaTextBox"
+        <Button
+                android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/board"
-                android:text="Hier werden Kampfinformationen wiedergegeben"
+                android:text="End fight"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:textColor="#000000"/>

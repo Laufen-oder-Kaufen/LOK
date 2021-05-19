@@ -1,25 +1,24 @@
 package com.example.lok.ui.adapter
 
-import Hero
+import Monster
 import android.content.Context
 import android.content.Context.WINDOW_SERVICE
 import android.util.DisplayMetrics
 import android.view.*
-import android.view.animation.AccelerateDecelerateInterpolator
-import android.view.animation.AnimationUtils
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.lok.R
 import com.example.lok.TestData
-import java.util.logging.Handler
 
-class ExpAdapter(context : Context) : BaseAdapter() {
+class ExpAdapter(context : Context, exp : Int) : BaseAdapter() {
 
     private val mContext : Context
+    private var mExp : Int
 
     init{
         mContext = context
+        mExp = exp
     }
 
     override fun getCount(): Int {
@@ -62,21 +61,18 @@ class ExpAdapter(context : Context) : BaseAdapter() {
         magicDef.text = myHero.mdf.toString()
         agility.text = myHero.agi.toString()
         luck.text = myHero.luk.toString()
-        xpTxt.text = "+1200 EXP"
+        xpTxt.text = "+ " + mExp.toString() + " EXP"
+        xpToLevelUp.layoutParams.width = myHero.exp
 
-        myHero.exp += 1200
-        if(myHero.exp >= 1000){
-            myHero.exp -= 1000
-            // levelUp()
-        }else{
-
-        }
-        xpToLevelUp.layoutParams.width += display.widthPixels * (myHero.exp / 1000)
+        myHero.exp += mExp
+        xpToLevelUp.layoutParams.width = myHero.exp
+        xpToLevelUp.layoutParams.width += display.widthPixels * (mExp / 1000)
         if(xpToLevelUp.layoutParams.width >= display.widthPixels){
             xpToLevelUp.layoutParams.width = 1
+            xpTxt.text = "LEVEL UP"
+            mExp -= 1000
+            xpToLevelUp.layoutParams.width += display.widthPixels * (mExp / 1000)
         }
-
-
         return view
     }
 }

@@ -16,31 +16,31 @@ class TestData {
             R.drawable.con26, R.drawable.con27, R.drawable.con28)
 
         val warrior = Hero(4, "Sir Grauselig", images.get(0), images.get(0), "Warrior",
-            100, 100, 15, 12, 0, 3, 8, 8)
+            100, 100, 15, 12, 0, 3, 8, 8, 200)
         val magician = Hero(1, "Grindelwald", images.get(5), images.get(5), "Magician",
-            100, 100, 5, 5, 15, 13, 4, 12)
+            100, 100, 5, 5, 15, 13, 4, 12, 200)
         val ninja = Hero(2,"Yamato", images.get(1), images.get(1), "Ninja",
-            100, 100, 10, 8, 5, 5, 15, 15)
+            100, 100, 10, 8, 5, 5, 15, 15, 200)
         val tank = Hero(3, "Hulk", images.get(3), images.get(3), "Tank",
-            200, 200, 25, 20, 0, 0, 2, 8)
+            200, 200, 25, 20, 0, 0, 2, 8, 200)
         val warrior2 = Hero(41, "Mrs Grauselig", images.get(2), images.get(2), "Warrior",
-            100, 100, 15, 12, 0, 3, 8, 8)
+            100, 100, 15, 12, 0, 3, 8, 8, 200)
         val magician2 = Hero(11, "Grantelwald", images.get(8), images.get(8), "Magician",
-            100, 100, 5, 5, 15, 13, 4, 12)
+            100, 100, 5, 5, 15, 13, 4, 12, 200)
         val ninja2 = Hero(21,"Shusui", images.get(9), images.get(9), "Ninja",
-            100, 100, 10, 8, 5, 5, 15, 15)
+            100, 100, 10, 8, 5, 5, 15, 15, 200)
         val tank2 = Hero(31, "Harvel", images.get(11), images.get(11), "Tank",
-            200, 200, 25, 20, 0, 0, 2, 8)
+            200, 200, 25, 20, 0, 0, 2, 8, 200)
         val warrior3 = Hero(42, "Mrs Grauselig Sr", images.get(2), images.get(2), "Warrior",
-            100, 100, 15, 12, 0, 3, 8, 8)
+            100, 100, 15, 12, 0, 3, 8, 8, 200)
         val magician3 = Hero(12, "Grantelwald Sr", images.get(8), images.get(8), "Magician",
-            100, 100, 5, 5, 15, 13, 4, 12)
+            100, 100, 5, 5, 15, 13, 4, 12, 200)
         val ninja3 = Hero(22,"Shusui Sr", images.get(9), images.get(9), "Ninja",
-            100, 100, 10, 8, 5, 5, 15, 15)
+            100, 100, 10, 8, 5, 5, 15, 15, 200)
         val tank3 = Hero(32, "Harvel Sr", images.get(11), images.get(11), "Tank",
-            200, 200, 25, 20, 0, 0, 2, 8)
+            200, 200, 25, 20, 0, 0, 2, 8, 200)
         val nullHero = Hero(999, "NULL", images.get(14), images.get(14), "NULL",
-            1,1,0,0,0,0,0,0)
+            1,1,0,0,0,0,0,0, 0)
 
         val enemy1 = Monster(101, "Harvel", images.get(11), images.get(11), "NULL",
             100,100,0,0,0,0,0,0)

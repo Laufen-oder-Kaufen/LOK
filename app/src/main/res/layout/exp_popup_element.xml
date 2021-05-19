@@ -14,7 +14,7 @@
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="80dp">
+            android:paddingStart="80dp">
 
         <ImageView
                 android:id="@+id/maxHP_img"

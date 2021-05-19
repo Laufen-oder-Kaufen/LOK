@@ -1,8 +1,5 @@
 package com.example.lok.ui.shop
 
-import android.R.attr
-import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,14 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import com.example.lok.R
-import com.braintreepayments.api.dropin.DropInRequest
-import com.braintreepayments.api.dropin.DropInResult
-import android.R.attr.data
-import android.content.Context
-import android.os.Handler
-import android.os.HandlerThread
 import android.widget.TextView
-import com.example.lok.RefreshActivity
 import com.example.lok.TestData
 
 
