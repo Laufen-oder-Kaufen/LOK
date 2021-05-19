@@ -1,4 +1,4 @@
-package com.example.lok.ui.gacha
+package com.example.lok.ui.fragment
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.lok.R
+import com.example.lok.ui.gacha.GachaViewModel
 
 class GachaFragment : Fragment() {
 

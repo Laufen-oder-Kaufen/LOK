@@ -1,4 +1,4 @@
-package com.example.lok
+package com.example.lok.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.lok.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {

@@ -12,7 +12,11 @@
             android:layout_weight="0.15">
 
 
-        <ImageButton android:id="@+id/fightBtn" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/swords" />
+        <ImageButton
+                android:id="@+id/fightBtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/swords" />
 
     </LinearLayout>
     <LinearLayout

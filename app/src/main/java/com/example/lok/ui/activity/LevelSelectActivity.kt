@@ -1,8 +1,9 @@
-package com.example.lok
+package com.example.lok.ui.activity
 
 import android.os.Bundle
 import android.widget.GridView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.lok.R
 import com.example.lok.ui.adapter.LevelSelecterAdapter
 
 class LevelSelectActivity : AppCompatActivity() {

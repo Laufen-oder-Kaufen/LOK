@@ -1,10 +1,14 @@
-package com.example.lok
+package com.example.lok.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.ImageButton
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.lok.Actor
+import com.example.lok.Hero
+import com.example.lok.Monster
+import com.example.lok.R
 import com.example.lok.TestData.Companion.activeTeam
 import com.example.lok.TestData.Companion.getEnemy
 import com.example.lok.TestData.Companion.getHero
@@ -20,54 +24,52 @@ class ArenaActivity : AppCompatActivity() {
         val enemyContainer = findViewById<ListView>(R.id.enemies)
         heroContainer.adapter = ArenaAdapter(this, "hero")
         enemyContainer.adapter = ArenaAdapter(this, "enemy")
+        var hero1 = activeTeam[0]
+        var hero2 = activeTeam[1]
+        var hero3 = activeTeam[2]
+        val heroList = ArrayList<Hero>()
+        heroList.add(getHero(hero1))
+        heroList.add(getHero(hero2))
+        heroList.add(getHero(hero3))
+        val enemyList = ArrayList<Monster>()
+        enemyList.add(getEnemy(101))
+        enemyList.add(getEnemy(102))
+        enemyList.add(getEnemy(103))
+        val battleSequence = LinkedList<Actor>()
+        for (i in heroList.indices) {
+            battleSequence.add(heroList[i])
+        }
+        for (i in enemyList.indices) {
+            battleSequence.add(enemyList[i])
+        }
+        levelUp(getHero(hero1), 3)
+        levelUp(getHero(hero2), 2)
+        levelUp(getHero(hero3), 3)
+
+        levelUp(getEnemy(101), 5)
+        levelUp(getEnemy(102), 5)
+        levelUp(getEnemy(103), 5)
 
         val fightBtn = findViewById<ImageButton>(R.id.fightBtn)
         fightBtn.setOnClickListener{
-            if(fightBtn.visibility == View.VISIBLE){
-                fightBtn.visibility == View.GONE
-               var hero1 = activeTeam.get(0)
-                var hero2 = activeTeam.get(1)
-                var hero3 = activeTeam.get(2)
-
-
-                println(getHero(hero1).name + " " + getHero(hero2).name + " " + getHero(hero3).name)
-                val heroList = ArrayList<Hero>()
-                heroList.add(getHero(hero1))
-                heroList.add(getHero(hero2))
-                heroList.add(getHero(hero3))
-
-                println("Prepare Battle...")
-                val enemyList = ArrayList<Monster>()
-
-                enemyList.add(getEnemy(101))
-                enemyList.add(getEnemy(102))
-                enemyList.add(getEnemy(103))
-                val battleSequence = LinkedList<Actor>()
-                for (i in heroList.indices) {
-                    battleSequence.add(heroList[i])
+                if(enemyList.size == 0) { // Fehlerhaft? Es soll ja nur eine Runde durchgehen.
+                    Intent(this, ExpActivity::class.java).also {
+                        startActivity(it, null)
+                    }
                 }
-                for (i in enemyList.indices) {
-                    battleSequence.add(enemyList[i])
+                if (heroList.size == 0){
+                    Intent(this, MainActivity::class.java).also{
+                        startActivity(it, null)
+                    }
                 }
-                levelUp(getHero(hero1), 3)
-                levelUp(getHero(hero2), 2)
-                levelUp(getHero(hero3), 3)
-
-                levelUp(getEnemy(101), 2)
-                levelUp(getEnemy(102), 2)
-                levelUp(getEnemy(103), 1)
-                while (heroList.size > 0 && enemyList.size > 0) { // Fehlerhaft? Es soll ja nur eine Runde durchgehen.
                     Collections.sort(battleSequence, Comparator.comparingInt { obj: Actor -> obj.agi }.reversed())
                     fight(heroList, enemyList, battleSequence)
                     heroContainer.adapter = ArenaAdapter(this, "hero")
                     enemyContainer.adapter = ArenaAdapter(this, "enemy")
                     println("Hero Size " + heroList.size)
 
-                }
                 println("Kampf vorbei! Helden: " + heroList.size + "/ Gegner: " + enemyList.size)
             }
-        }
-
     }
 
 
@@ -102,7 +104,6 @@ class ArenaActivity : AppCompatActivity() {
             val victimCritEvade = baseCritEvade + victim.luk * 0.1
             val random = Random()
             val rn = random.nextInt(100).toDouble()
-        //    println("actorCritChance $actorCritChance/ victimCritEvade $victimCritEvade/ RN: $rn")
             return if (rn <= actorCritChance - victimCritEvade) {
                 true
             } else false
@@ -118,7 +119,6 @@ class ArenaActivity : AppCompatActivity() {
                     if (enemies.size == 0) {
                         break
                     }
-
 
                     val actor = battleSequence[i]
                     var victim = battleSequence[i] // this is just for initialization purposes
@@ -170,7 +170,6 @@ class ArenaActivity : AppCompatActivity() {
                         //After every death the linked list is updated (might be useless because linked list)
                         Collections.sort(battleSequence, Comparator.comparingInt { obj: Actor -> obj.agi }.reversed())
 
-
                         if (victimType == "com.example.lok.Monster") {
                             enemies.remove(victim)
                         }
@@ -178,12 +177,9 @@ class ArenaActivity : AppCompatActivity() {
                             heroes.remove(victim)
                         }
                     }
-
-
                     i++
                 }
             }
-
     fun levelUp(actor: Actor, level: Int) {
         println("Level UP")
         var multiplicator = 0.0
@@ -233,7 +229,6 @@ class ArenaActivity : AppCompatActivity() {
             if (Math.round(actor.agi * multiplicator) <1) {
                 actor.agi = actor.agi + 1
             }
-            //              actor.setLuck(actor.getLuck() + (int) Math.round(actor.getLuck() * multiplicator/4));
             println(actor.toString())
         }
     }

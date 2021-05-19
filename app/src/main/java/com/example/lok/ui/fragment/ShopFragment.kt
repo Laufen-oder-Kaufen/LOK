@@ -1,4 +1,4 @@
-package com.example.lok.ui.shop
+package com.example.lok.ui.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

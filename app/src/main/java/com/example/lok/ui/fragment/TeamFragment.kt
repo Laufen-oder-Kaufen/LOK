@@ -1,4 +1,4 @@
-package com.example.lok.ui.team
+package com.example.lok.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.lok.R
 import com.example.lok.TestData
 import com.example.lok.ui.adapter.CharacterAdapter
+import com.example.lok.ui.team.TeamViewModel
 
 class TeamFragment : Fragment() {
 
