@@ -12,7 +12,8 @@ public class PlayerData {
     String name = "Johnny Tester";
     int gold = 500;
     int diamonds = 10;
-    int level = 5;
+    int level = 10;
+    int prog = 1;
     int exp = 500;
     Triple<Integer, Integer, Integer> allHeroes; //Besteht aus: ID, Level, Erfahrung
     ArrayList<Integer> activeHeroes;
@@ -27,6 +28,7 @@ public class PlayerData {
         this.gold=0;
         this.diamonds=0;
         this.level=1;
+        this.prog=1;
         this.exp=0;
         this.activeHeroes = null;
         this.availableHeroes = null;
@@ -72,6 +74,16 @@ public class PlayerData {
     public void setLevel(int level) {
         this.level = level;
     }
+
+    public int getProg() {
+        return prog;
+    }
+
+    public void setProg(int prog) {
+        this.prog = prog;
+    }
+
+    public void progUp() { this.prog++; }
 
     public int getExp() {
         return exp;

@@ -38,22 +38,22 @@ class TestData {
         private var diamonds = 0
         private var keys = 0
 
-        var nullHero = Hero("NULL", 0, "W", "C", 0, 0, 0, 0, 0, 0, 0, nullIcon, nullIcon, 0)
+        var nullHero = Hero("NULL", 0, "W", "C", 0, 0, 0, 0, 0, 0, 0, nullIcon, nullIcon)
         var nullEnemy = Monster("NULL", 0, "W", "C", 0, 0, 0, 0, 0, 0, 0, nullIcon, nullIcon)
         var nullItem = Item(0, "NULL", nullIcon, nullIcon, "C")
 
-        var Claude = Hero("Claude", 1, "W", "C", 40, 15, 0, 5, 5, 5, 5, images.get(1), images.get(1), 0)
-        var Clive = Hero("Clive", 2, "A", "C", 30, 12, 0, 10, 10, 15, 15, images.get(0), images.get(0), 0)
-        var Claudia = Hero("Claudia", 3, "M", "C", 25, 0, 15, 5, 20, 5, 5, images.get(2), images.get(2), 0)
-        var Ulfred = Hero("Ulfred", 4, "W", "U", 40, 15, 0, 15, 5, 5, 5, images.get(1), images.get(1), 0)
-        var Usher = Hero("Usher", 5, "A", "U", 30, 12, 0, 10, 10, 15, 15, images.get(0), images.get(0), 0)
-        var Urumeius = Hero("Urumeius", 6, "M", "U", 25, 0, 15, 5, 20, 5, 5, images.get(5), images.get(5), 0)
-        var Reginald = Hero("Reginald", 7, "W", "R", 40, 15, 0, 15, 5, 5, 5, images.get(1), images.get(1), 0)
-        var Ramon = Hero("Rámon", 8, "A", "R", 30, 12, 0, 10, 10, 15, 15, images.get(0), images.get(0), 0)
-        var Rhea = Hero("Rhea", 9, "M", "R", 25, 0, 15, 5, 20, 5, 5, images.get(2), images.get(2), 0)
-        var Ludwig = Hero("Ludwig", 10, "W", "L", 40, 15, 0, 15, 5, 5, 5, images.get(6), images.get(6), 0)
-        var Largo = Hero("Largo", 11, "A", "L", 30, 12, 0, 10, 10, 15, 15, images.get(0), images.get(0), 0)
-        var Leandra = Hero("Leandra", 12, "M", "L", 25, 0, 15, 5, 20, 5, 5, images.get(1), images.get(1), 0)
+        var Claude = Hero("Claude", 1, "W", "C", 40, 15, 0, 5, 5, 5, 5, images.get(1), images.get(1))
+        var Clive = Hero("Clive", 2, "A", "C", 30, 12, 0, 10, 10, 15, 15, images.get(0), images.get(0))
+        var Claudia = Hero("Claudia", 3, "M", "C", 25, 0, 15, 5, 20, 5, 5, images.get(2), images.get(2))
+        var Ulfred = Hero("Ulfred", 4, "W", "U", 40, 15, 0, 15, 5, 5, 5, images.get(1), images.get(1))
+        var Usher = Hero("Usher", 5, "A", "U", 30, 12, 0, 10, 10, 15, 15, images.get(0), images.get(0))
+        var Urumeius = Hero("Urumeius", 6, "M", "U", 25, 0, 15, 5, 20, 5, 5, images.get(5), images.get(5))
+        var Reginald = Hero("Reginald", 7, "W", "R", 40, 15, 0, 15, 5, 5, 5, images.get(1), images.get(1))
+        var Ramon = Hero("Rámon", 8, "A", "R", 30, 12, 0, 10, 10, 15, 15, images.get(0), images.get(0))
+        var Rhea = Hero("Rhea", 9, "M", "R", 25, 0, 15, 5, 20, 5, 5, images.get(2), images.get(2))
+        var Ludwig = Hero("Ludwig", 10, "W", "L", 40, 15, 0, 15, 5, 5, 5, images.get(6), images.get(6))
+        var Largo = Hero("Largo", 11, "A", "L", 30, 12, 0, 10, 10, 15, 15, images.get(0), images.get(0))
+        var Leandra = Hero("Leandra", 12, "M", "L", 25, 0, 15, 5, 20, 5, 5, images.get(1), images.get(1))
 
         var lowGoblin = Monster("Lower Goblin", 101, "W","1",20,10,0,10,0,10,5, images.get(12), images.get(12))
         var lowSkelMage = Monster ("Lower Skeleton Mage", 102, "M", "1", 15,0,10,5,10,5,3,images.get(9), images.get(9))
@@ -96,7 +96,6 @@ class TestData {
         val myItems = arrayListOf<Int>(901, 903, 908)
 
         val Player = PlayerData(1, "Tobias Test")
-
 
         fun buy(stuff: String, amount: Int) {
             if(stuff == "diamonds"){

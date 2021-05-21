@@ -13,14 +13,14 @@ class ExpActivity() : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.exp_popup)
+        val enemyList = intent.extras!!.getIntegerArrayList("enemies")
         val listView = findViewById<ListView>(R.id.exp_popup)
         val homeBtn = findViewById<Button>(R.id.home_btn)
-        listView.adapter = ExpAdapter(this, 1200)
+        listView.adapter = ExpAdapter(this, enemyList!!)
 
         homeBtn.setOnClickListener{
-            Intent(this, MainActivity::class.java).also {
-                startActivity(it, null)
-            }
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 

@@ -5,10 +5,7 @@ import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.lok.Actor
-import com.example.lok.Hero
-import com.example.lok.Monster
-import com.example.lok.R
+import com.example.lok.*
 import com.example.lok.TestData.Companion.activeTeam
 import com.example.lok.TestData.Companion.getEnemy
 import com.example.lok.TestData.Companion.getHero
@@ -22,6 +19,10 @@ class ArenaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.arena)
+        val key = intent.extras!!.getInt("key")
+        val lvl = intent.extras!!.getInt("level")
+        println(key)
+        println(lvl)
         val heroContainer = findViewById<ListView>(R.id.heroes)
         val enemyContainer = findViewById<ListView>(R.id.enemies)
         heroContainer.adapter = ArenaAdapter(this, "hero")
@@ -45,37 +46,39 @@ class ArenaActivity : AppCompatActivity() {
             battleSequence.add(enemyList[i])
         }
 
-     //   levelUp(getEnemy(101), 1)
-     //   levelUp(getEnemy(102), 1)
-     //   levelUp(getEnemy(103), 1)
+        levelUp(getEnemy(101), lvl)
+        levelUp(getEnemy(102), lvl)
+        levelUp(getEnemy(103), lvl)
 
         val fightBtn = findViewById<ImageButton>(R.id.fightBtn)
         fightBtn.setOnClickListener{
                 if(enemyList.size == 0) { // Fehlerhaft? Es soll ja nur eine Runde durchgehen.
-                    Intent(this, ExpActivity::class.java).also {
-                        for (n in activeTeam.indices) {
-                            getHero(activeTeam.get(n)).currHP = getHero(activeTeam.get(n)).maxHP
-                            startActivity(it, null)
-                        }
-                        for (n in myEnemies.indices) {
-                            getEnemy(myEnemies.get(n)).currHP = getEnemy(myEnemies.get(n)).maxHP
-                            startActivity(it, null)
-                        }
+                    if(key == 1){
+                        TestData().companion.Player.progUp()
+                    }
+                    val intent = Intent(this, ExpActivity::class.java)
+                    val b : Bundle = Bundle()
+                    val enemyIds : ArrayList<Int> = arrayListOf<Int>(101, 102, 103)
+                    b.putIntegerArrayList("enemies", enemyIds)
+                    intent.putExtras(b)
+                    startActivity(intent)
+
+                    for (n in activeTeam.indices) {
+                        getHero(activeTeam.get(n)).currHP = getHero(activeTeam.get(n)).maxHP
+                    }
+                    for (n in myEnemies.indices) {
+                        getEnemy(myEnemies.get(n)).currHP = getEnemy(myEnemies.get(n)).maxHP
                     }
                 }
                 if (heroList.size == 0){
-
-                    Intent(this, MainActivity::class.java).also{
-                        for (n in activeTeam.indices) {
-                            getHero(activeTeam.get(n)).currHP = getHero(activeTeam.get(n)).maxHP
-                            startActivity(it, null)
-                        }
-                        for (n in myEnemies.indices) {
-                            getEnemy(myEnemies.get(n)).currHP = getEnemy(myEnemies.get(n)).maxHP
-                            startActivity(it, null)
-                        }
-                        startActivity(it, null)
+                    for (n in activeTeam.indices) {
+                        getHero(activeTeam.get(n)).currHP = getHero(activeTeam.get(n)).maxHP
                     }
+                    for (n in myEnemies.indices) {
+                        getEnemy(myEnemies.get(n)).currHP = getEnemy(myEnemies.get(n)).maxHP
+                    }
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
                 }
 
                     Collections.sort(battleSequence, Comparator.comparingInt { obj: Actor -> obj.agi }.reversed())

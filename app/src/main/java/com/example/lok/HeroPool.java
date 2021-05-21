@@ -26,18 +26,18 @@ public class HeroPool {
 
     public static Hero buildHero(int id, int image, int icon) {
 
-        Hero Claude = new Hero("Claude", 1, "W", "C", 40, 15, 0, 5, 5, 5, 5, image, icon, 0);
-        Hero Clive = new Hero("Clive", 2, "A", "C", 30, 12, 0, 10, 10, 15, 15, image, icon, 0);
-        Hero Claudia = new Hero("Claudia", 3, "M", "C", 25, 0, 15, 5, 20, 5, 5, image, icon, 0);
-        Hero Ulfred = new Hero("Ulfred", 4, "W", "U", 40, 15, 0, 15, 5, 5, 5, image, icon, 0);
-        Hero Usher = new Hero("Usher", 5, "A", "U", 30, 12, 0, 10, 10, 15, 15, image, icon, 0);
-        Hero Urumeius = new Hero("Urumeius", 6, "M", "U", 25, 0, 15, 5, 20, 5, 5, image, icon, 0);
-        Hero Reginald = new Hero("Reginald", 7, "W", "R", 40, 15, 0, 15, 5, 5, 5, image, icon, 0);
-        Hero Ramon = new Hero("Rámon", 8, "A", "R", 30, 12, 0, 10, 10, 15, 15, image, icon, 0);
-        Hero Rhea = new Hero("Rhea", 9, "M", "R", 25, 0, 15, 5, 20, 5, 5, image, icon, 0);
-        Hero Ludwig = new Hero("Ludwig", 10, "W", "L", 40, 15, 0, 15, 5, 5, 5, image, icon, 0);
-        Hero Largo = new Hero("Largo", 11, "A", "L", 30, 12, 0, 10, 10, 15, 15, image, icon, 0);
-        Hero Leandra = new Hero("Leandra", 12, "M", "L", 25, 0, 15, 5, 20, 5, 5, image, icon, 0);
+        Hero Claude = new Hero("Claude", 1, "W", "C", 40, 15, 0, 5, 5, 5, 5, image, icon);
+        Hero Clive = new Hero("Clive", 2, "A", "C", 30, 12, 0, 10, 10, 15, 15, image, icon);
+        Hero Claudia = new Hero("Claudia", 3, "M", "C", 25, 0, 15, 5, 20, 5, 5, image, icon);
+        Hero Ulfred = new Hero("Ulfred", 4, "W", "U", 40, 15, 0, 15, 5, 5, 5, image, icon);
+        Hero Usher = new Hero("Usher", 5, "A", "U", 30, 12, 0, 10, 10, 15, 15, image, icon);
+        Hero Urumeius = new Hero("Urumeius", 6, "M", "U", 25, 0, 15, 5, 20, 5, 5, image, icon);
+        Hero Reginald = new Hero("Reginald", 7, "W", "R", 40, 15, 0, 15, 5, 5, 5, image, icon);
+        Hero Ramon = new Hero("Rámon", 8, "A", "R", 30, 12, 0, 10, 10, 15, 15, image, icon);
+        Hero Rhea = new Hero("Rhea", 9, "M", "R", 25, 0, 15, 5, 20, 5, 5, image, icon);
+        Hero Ludwig = new Hero("Ludwig", 10, "W", "L", 40, 15, 0, 15, 5, 5, 5, image, icon);
+        Hero Largo = new Hero("Largo", 11, "A", "L", 30, 12, 0, 10, 10, 15, 15, image, icon);
+        Hero Leandra = new Hero("Leandra", 12, "M", "L", 25, 0, 15, 5, 20, 5, 5, image, icon);
 
         ArrayList<Hero> heroArrayList = new ArrayList<Hero>();
         heroArrayList.add(Claude);

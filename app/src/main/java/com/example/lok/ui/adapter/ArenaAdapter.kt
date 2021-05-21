@@ -55,7 +55,6 @@ class ArenaAdapter(context: Context, state: String) : BaseAdapter() {
                 fighterImg.setImageResource(hero.image)
                 val percentage : Float =  ((hero.currHP.toFloat()/hero.maxHP.toFloat()))
                 newHP = (percentage * 345).toInt()
-                status.layoutParams.width = newHP
 
                 if(newHP <= 1){
                     newHP = 1
@@ -66,6 +65,7 @@ class ArenaAdapter(context: Context, state: String) : BaseAdapter() {
                     fighterImg.colorFilter = cf
                     fighterImg.imageAlpha = 128
                 }
+                status.layoutParams.width = newHP
 
 
             }else{
@@ -73,7 +73,6 @@ class ArenaAdapter(context: Context, state: String) : BaseAdapter() {
                 fighterImg.setImageResource(enemy.image)
                 val percentage : Float =  enemy.currHP.toFloat()/enemy.maxHP.toFloat()
                 newHP = (percentage * 345).toInt()
-                status.layoutParams.width = newHP
 
                 if(newHP <= 1){
                     newHP = 1
@@ -84,7 +83,7 @@ class ArenaAdapter(context: Context, state: String) : BaseAdapter() {
                     fighterImg.colorFilter = cf
                     fighterImg.imageAlpha = 128
                 }
-
+                status.layoutParams.width = newHP
             }
 
 
