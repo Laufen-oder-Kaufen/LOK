@@ -23,11 +23,11 @@ class ItemAdapter(context : Context) : BaseAdapter() {
     }
 
     override fun getItem(position: Int): Any {
-        TODO("Not yet implemented")
+        return 1
     }
 
     override fun getItemId(position: Int): Long {
-        TODO("Not yet implemented")
+        return 1
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
