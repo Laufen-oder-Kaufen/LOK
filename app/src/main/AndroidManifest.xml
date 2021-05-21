@@ -8,9 +8,15 @@
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".ui.activity.ArenaActivity"/>
+        <activity android:name=".ui.activity.LevelSelectActivity"/>
+        <activity android:name=".ui.activity.MainActivity"/>
+        <activity android:name=".ui.activity.ExpActivity"/>
+        <activity android:name=".ui.activity.GachaCommonLootActivity"/>
+        <activity android:name=".ui.activity.GachaRareLootActivity"/>
         <activity
-                android:name=".MainActivity"
+                android:name=".ui.activity.LoginActivity"
                 android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -19,5 +25,10 @@
             </intent-filter>
         </activity>
     </application>
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+=======
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+
+>>>>>>> ui
 </manifest>

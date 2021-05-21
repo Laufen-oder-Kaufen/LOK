@@ -18,6 +18,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+<<<<<<< HEAD
         maven {
             url 'https://api.mapbox.com/downloads/v2/releases/maven'
             authentication {
@@ -29,6 +30,13 @@ allprojects {
                 username = 'mapbox'
                 // Use the secret token you stored in gradle.properties as the password
                 password = project.properties['MAPBOX_DOWNLOADS_TOKEN'] ?: ""
+=======
+        maven{
+            url "https://cardinalcommerce.bintray.com/android"
+            credentials {
+                username 'braintree-team-sdk@cardinalcommerce'
+                password '220cc9476025679c4e5c843666c27d97cfb0f951'
+>>>>>>> ui
             }
         }
     }

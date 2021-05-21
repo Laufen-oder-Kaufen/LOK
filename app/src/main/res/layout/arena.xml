@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:weightSum="1">
+    
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="0.15">
+
+
+        <ImageButton
+                android:id="@+id/fightBtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background_images"
+                android:src="@drawable/swords" />
+
+    </LinearLayout>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="0.7">
+
+    <RelativeLayout
+            android:id="@+id/heroesContainer"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5">
+
+        <ListView
+                android:id="@+id/heroes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+            android:id="@+id/enemiesContainer"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5">
+
+        <ListView
+                android:id="@+id/enemies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="0.15">
+
+        <Button
+                android:id="@+id/skillBtn1"
+                android:layout_width="130dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/background_images"
+                android:text="Skill 1"/>
+        <Button
+                android:id="@+id/skillBtn2"
+                android:layout_width="130dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/background_images"
+                android:text="Skill 2"
+                android:layout_marginHorizontal="10dp"/>
+        <Button
+                android:id="@+id/skillBtn3"
+                android:layout_width="130dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/background_images"
+                android:text="Skill 3"/>
+
+    </LinearLayout>
+
+</LinearLayout>

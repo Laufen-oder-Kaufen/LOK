@@ -24,7 +24,7 @@
     <remote-repository>
       <option name="id" value="maven" />
       <option name="name" value="maven" />
-      <option name="url" value="https://api.mapbox.com/downloads/v2/releases/maven" />
+      <option name="url" value="https://cardinalcommerce.bintray.com/android" />
     </remote-repository>
   </component>
 </project>

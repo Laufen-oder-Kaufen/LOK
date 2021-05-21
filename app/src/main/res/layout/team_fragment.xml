@@ -1,14 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.team.TeamFragment">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".ui.fragment.TeamFragment">
 
     <TextView
+            android:id="@+id/text"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="MOF"/>
+            android:layout_height="wrap_content"
+            android:text="@string/active_team"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="32sp"
+            app:layout_constraintTop_toTopOf="parent"/>
 
-</FrameLayout>
+    <GridView
+            android:id="@+id/activeTeamGridView"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:numColumns="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text"/>
+
+    <TextView
+            android:id="@+id/text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/all_team"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="32sp"
+            app:layout_constraintTop_toBottomOf="@+id/activeTeamGridView"/>
+
+    <GridView
+            android:id="@+id/teamGridView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text2"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,15 @@
+Lower Goblin,20,10,0,10,0,10,5,1,W
+Lower Skeleton Mage,15,0,10,5,10,5,3,1,M
+Lower Bat,15,8,0,5,5,8,8,1,A
+Big Goblin,20,10,0,10,0,10,5,C,W
+Goblin,25,12,0,13,0,10,5,2,W
+Goblin Archer,18,13,0,11,0,11,5,2,A
+Goblin Mage,18,0,13,10,0,5,5,2,M
+Goblin King,25,12,0,13,0,10,5,3,W
+Bandit,25,12,0,13,10,10,5,2,W
+Bandit Archer,22,10,0,12,5,13,8,2,A
+Bandit Mage,20,0,10,12,12,5,5,2,M
+Bandit Lord,25,12,0,13,0,10,5,4,W
+Zombie,30,17,0,13,13,15,5,3,W
+Skeleton Mage,22,0,17,5,13,13,3,3,M
+Lich,28,0,23,15,18,13,13,4,M
