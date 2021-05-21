@@ -1,5 +1,6 @@
 package com.example.lok;
 
+import kotlin.Pair;
 import kotlin.Triple;
 
 import java.lang.reflect.Array;
@@ -17,6 +18,7 @@ public class PlayerData {
     ArrayList<Integer> activeHeroes;
     ArrayList<Integer> availableHeroes;
     ArrayList<Triple> allHeroesList;
+    ArrayList<Pair> playerItems;
 
 
     public PlayerData(int id, String name) {
@@ -28,6 +30,7 @@ public class PlayerData {
         this.exp=0;
         this.activeHeroes = null;
         this.availableHeroes = null;
+        this.playerItems = null;
     }
 
     public int getId() {
@@ -112,5 +115,13 @@ public class PlayerData {
 
     public void setAllHeroesList(ArrayList<Triple> allHeroesList) {
         this.allHeroesList = allHeroesList;
+    }
+
+    public ArrayList<Pair> getPlayerItems() {
+        return playerItems;
+    }
+
+    public void setPlayerItems(ArrayList<Pair> playerItems) {
+        this.playerItems = playerItems;
     }
 }

@@ -12,6 +12,8 @@ import com.example.lok.R
 import com.example.lok.TestData.Companion.activeTeam
 import com.example.lok.TestData.Companion.getEnemy
 import com.example.lok.TestData.Companion.getHero
+import com.example.lok.TestData.Companion.myEnemies
+import com.example.lok.TestData.Companion.myHeroes
 import com.example.lok.ui.adapter.ArenaAdapter
 import java.util.*
 
@@ -24,13 +26,13 @@ class ArenaActivity : AppCompatActivity() {
         val enemyContainer = findViewById<ListView>(R.id.enemies)
         heroContainer.adapter = ArenaAdapter(this, "hero")
         enemyContainer.adapter = ArenaAdapter(this, "enemy")
-        var hero1 = activeTeam[0]
-        var hero2 = activeTeam[1]
-        var hero3 = activeTeam[2]
+        var hero1 = getHero(activeTeam[0])
+        var hero2 = getHero(activeTeam[1])
+        var hero3 = getHero(activeTeam[2])
         val heroList = ArrayList<Hero>()
-        heroList.add(getHero(hero1))
-        heroList.add(getHero(hero2))
-        heroList.add(getHero(hero3))
+        heroList.add(hero1)
+        heroList.add(hero2)
+        heroList.add(hero3)
         val enemyList = ArrayList<Monster>()
         enemyList.add(getEnemy(101))
         enemyList.add(getEnemy(102))
@@ -42,33 +44,44 @@ class ArenaActivity : AppCompatActivity() {
         for (i in enemyList.indices) {
             battleSequence.add(enemyList[i])
         }
-        levelUp(getHero(hero1), 3)
-        levelUp(getHero(hero2), 2)
-        levelUp(getHero(hero3), 3)
 
-        levelUp(getEnemy(101), 5)
-        levelUp(getEnemy(102), 5)
-        levelUp(getEnemy(103), 5)
+     //   levelUp(getEnemy(101), 1)
+     //   levelUp(getEnemy(102), 1)
+     //   levelUp(getEnemy(103), 1)
 
         val fightBtn = findViewById<ImageButton>(R.id.fightBtn)
         fightBtn.setOnClickListener{
                 if(enemyList.size == 0) { // Fehlerhaft? Es soll ja nur eine Runde durchgehen.
                     Intent(this, ExpActivity::class.java).also {
-                        startActivity(it, null)
+                        for (n in activeTeam.indices) {
+                            getHero(activeTeam.get(n)).currHP = getHero(activeTeam.get(n)).maxHP
+                            startActivity(it, null)
+                        }
+                        for (n in myEnemies.indices) {
+                            getEnemy(myEnemies.get(n)).currHP = getEnemy(myEnemies.get(n)).maxHP
+                            startActivity(it, null)
+                        }
                     }
                 }
                 if (heroList.size == 0){
+
                     Intent(this, MainActivity::class.java).also{
+                        for (n in activeTeam.indices) {
+                            getHero(activeTeam.get(n)).currHP = getHero(activeTeam.get(n)).maxHP
+                            startActivity(it, null)
+                        }
+                        for (n in myEnemies.indices) {
+                            getEnemy(myEnemies.get(n)).currHP = getEnemy(myEnemies.get(n)).maxHP
+                            startActivity(it, null)
+                        }
                         startActivity(it, null)
                     }
                 }
+
                     Collections.sort(battleSequence, Comparator.comparingInt { obj: Actor -> obj.agi }.reversed())
                     fight(heroList, enemyList, battleSequence)
                     heroContainer.adapter = ArenaAdapter(this, "hero")
                     enemyContainer.adapter = ArenaAdapter(this, "enemy")
-                    println("Hero Size " + heroList.size)
-
-                println("Kampf vorbei! Helden: " + heroList.size + "/ Gegner: " + enemyList.size)
             }
     }
 
@@ -178,6 +191,10 @@ class ArenaActivity : AppCompatActivity() {
                         }
                     }
                     i++
+
+
+
+
                 }
             }
     fun levelUp(actor: Actor, level: Int) {

@@ -21,11 +21,20 @@ class GachaCommonLootActivity : AppCompatActivity() {
         val btn = findViewById<Button>(R.id.button)
         val loot = getLoot()
 
+
+
         image.setImageResource(loot.image)
         name.text = loot.name
         rarity.text = "Common"
+        if (TestData().companion.heroes.filter { it.name == loot.name }.size == 0 )
+             {
+            TestData().companion.myItems.add(loot.id)
+        }
+        else {
+           val hero = TestData().companion.heroes.find { it.name == loot.name }
+            hero?.let { TestData().companion.myHeroes.add(it.id) }
+        }
 
-        TestData().companion.myItems.add(loot.id)
 
         btn.setOnClickListener {
             Intent(this, MainActivity::class.java).also {
@@ -37,7 +46,7 @@ class GachaCommonLootActivity : AppCompatActivity() {
 
     fun getLoot() : Item {
         val random : Int
-        random = (0..6).random()
+        random = (0..TestData().companion.gachaCommonLootList.size-1).random()
         return TestData().companion.getGachaItem(random, "common")
     }
 

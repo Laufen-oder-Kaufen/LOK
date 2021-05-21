@@ -42,12 +42,25 @@ class TestData {
         var nullItem = Item(0, "NULL", nullIcon, nullIcon, "C")
 
         var Claude = Hero("Claude", 1, "W", "C", 40, 15, 0, 5, 5, 5, 5, images.get(1), images.get(1), 0)
-        var Clive = Hero("Clive", 2, "A", "C", 30, 12, 0, 10, 10, 15, 15, images.get(2), images.get(2), 0)
-        var Claudia = Hero("Claudia", 3, "M", "C", 25, 0, 15, 5, 20, 5, 5, images.get(3), images.get(3), 0)
-        var Ulfred = Hero("Ulfred", 4, "W", "U", 40, 15, 0, 15, 5, 5, 5, images.get(4), images.get(4), 0)
-        var Bat = Monster("Bat", 101, "W", "C", 40, 15, 0, 5, 5, 5, 5, images.get(12), images.get(12))
-        var Goblin = Monster("Goblin", 102, "W", "C", 40, 15, 0, 5, 5, 5, 5, images.get(13), images.get(13))
-        var Zombie = Monster("Zombie", 103, "W", "C", 40, 15, 0, 5, 5, 5, 5, images.get(14), images.get(14))
+        var Clive = Hero("Clive", 2, "A", "C", 30, 12, 0, 10, 10, 15, 15, images.get(0), images.get(0), 0)
+        var Claudia = Hero("Claudia", 3, "M", "C", 25, 0, 15, 5, 20, 5, 5, images.get(2), images.get(2), 0)
+        var Ulfred = Hero("Ulfred", 4, "W", "U", 40, 15, 0, 15, 5, 5, 5, images.get(1), images.get(1), 0)
+        var Usher = Hero("Usher", 5, "A", "U", 30, 12, 0, 10, 10, 15, 15, images.get(0), images.get(0), 0)
+        var Urumeius = Hero("Urumeius", 6, "M", "U", 25, 0, 15, 5, 20, 5, 5, images.get(5), images.get(5), 0)
+        var Reginald = Hero("Reginald", 7, "W", "R", 40, 15, 0, 15, 5, 5, 5, images.get(1), images.get(1), 0)
+        var Ramon = Hero("Rámon", 8, "A", "R", 30, 12, 0, 10, 10, 15, 15, images.get(0), images.get(0), 0)
+        var Rhea = Hero("Rhea", 9, "M", "R", 25, 0, 15, 5, 20, 5, 5, images.get(2), images.get(2), 0)
+        var Ludwig = Hero("Ludwig", 10, "W", "L", 40, 15, 0, 15, 5, 5, 5, images.get(6), images.get(6), 0)
+        var Largo = Hero("Largo", 11, "A", "L", 30, 12, 0, 10, 10, 15, 15, images.get(0), images.get(0), 0)
+        var Leandra = Hero("Leandra", 12, "M", "L", 25, 0, 15, 5, 20, 5, 5, images.get(1), images.get(1), 0)
+
+        var lowGoblin = Monster("Lower Goblin", 101, "W","1",20,10,0,10,0,10,5, images.get(12), images.get(12))
+        var lowSkelMage = Monster ("Lower Skeleton Mage", 102, "M", "1", 15,0,10,5,10,5,3,images.get(9), images.get(9))
+        var Bat = Monster("Lower Bat", 103, "A", "1", 15,8,0,5,5,8,8,images.get(14), images.get(14))
+
+
+
+
         var Dagger = Item(901, "Dagger", itemImages[0], itemImages[0], "C")
         val MagicDagger = Item(902, "Magical Dagger", itemImages[1], itemImages[1], "U")
         val DeathDagger = Item(903, "Dagger of Death", itemImages[2], itemImages[2], "U")
@@ -65,16 +78,29 @@ class TestData {
         val Legs1 = Item(915, "Legs", itemImages[14], itemImages[14], "C")
         val Legs2 = Item(916, "Hardened Legs", itemImages[15], itemImages[15], "U")
 
+        var ClaudeItem = Item(801, "Claude", images.get(1), images.get(1), "C")
+        var CliveItem = Item(802, "Clive", images.get(0), images.get(0), "C")
+        var ClaudiaItem = Item(803, "Claudia", images.get(2), images.get(2), "C")
+        var UlfredItem = Item(804, "Ulfred", images.get(1), images.get(1), "U")
+        var UsherItem = Item(805, "Usher", images.get(0), images.get(0), "U")
+        var UrumeiusItem = Item(806, "Urumeius", images.get(5), images.get(5), "U")
+
+
+
+
         val itemList = arrayListOf<Item>(Dagger, MagicPotion, Helmet1, Chest1, Shoes1, Gloves1, Legs1, RevPotion, LvlPotion, MagicDagger, DeathDagger, Helmet2, Chest2, Shoes2,
-            Gloves2, Legs2)
-        val gachaCommonLootList = arrayListOf<Item>(Dagger, MagicPotion, Helmet1, Chest1, Shoes1, Gloves1, Legs1)
-        val gachaRareLootList = arrayListOf<Item>(RevPotion, LvlPotion, MagicDagger, DeathDagger, Helmet2, Chest2, Shoes2, Gloves2, Legs2)
-        val heroes = arrayListOf<Hero>(Claude, Clive, Claudia, Ulfred)
-        val enemies = arrayListOf<Monster>(Bat, Goblin, Zombie)
+            Gloves2, Legs2, ClaudeItem, CliveItem, ClaudiaItem,UlfredItem, UsherItem, UrumeiusItem )
+        val gachaCommonLootList = arrayListOf<Item>(Dagger, MagicPotion, Helmet1, Chest1, Shoes1, Gloves1, Legs1, ClaudeItem, CliveItem, ClaudiaItem)
+        val gachaRareLootList = arrayListOf<Item>(RevPotion, LvlPotion, MagicDagger, DeathDagger, Helmet2, Chest2, Shoes2, Gloves2, Legs2, UlfredItem, UsherItem, UrumeiusItem)
+        val heroes = arrayListOf<Hero>(Claude, Clive, Claudia, Ulfred, Usher, Urumeius)
+        val enemies = arrayListOf<Monster>(Bat, lowGoblin, lowSkelMage)
         val activeTeam = arrayListOf<Int>(1, 2, 3)
         val myHeroes = arrayListOf<Int>(4)
         val myEnemies = arrayListOf<Int>(101, 102, 103)
         val myItems = arrayListOf<Int>(901, 903, 908)
+
+        val Player = PlayerData(1, "Tobias Test")
+
 
         fun buyDiamonds(amount: Int) {
             diamonds += amount
@@ -133,13 +159,14 @@ class TestData {
             var random: Int
             if (rarity == "rare"){
                 while (i <= cycle) {
-                    random = (0..8).random()
+                    random = (0..gachaRareLootList.size-1).random()
                     myItem = lootList[random]
                     i++
                 }
-            }else{
+            }
+            if (rarity == "common"){
                 while (i <= cycle) {
-                    random = (0..6).random()
+                    random = (0..gachaCommonLootList.size-1).random()
                     myItem = lootList[random]
                     i++
                 }
