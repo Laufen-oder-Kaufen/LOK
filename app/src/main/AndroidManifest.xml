@@ -25,10 +25,7 @@
             </intent-filter>
         </activity>
     </application>
-<<<<<<< HEAD
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-=======
     <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
 
->>>>>>> ui
 </manifest>
