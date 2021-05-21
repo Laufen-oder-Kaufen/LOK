@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import com.example.lok.R
+import com.example.lok.TestData
 import com.example.lok.ui.activity.GachaCommonLootActivity
 import com.example.lok.ui.activity.GachaRareLootActivity
 
@@ -22,11 +23,13 @@ class GachaFragment : Fragment() {
         val rareChest = view.findViewById<ImageView>(R.id.rare)
 
         commonChest.setOnClickListener{
+            TestData().companion.spent("keys", 1)
             Intent(requireContext(), GachaCommonLootActivity::class.java).also {
                 startActivity(it)
             }
         }
         rareChest.setOnClickListener{
+            TestData().companion.spent("keys", 5)
             Intent(requireContext(), GachaRareLootActivity::class.java).also {
                 startActivity(it)
             }

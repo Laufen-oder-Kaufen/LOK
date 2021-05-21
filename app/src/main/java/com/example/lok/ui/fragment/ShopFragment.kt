@@ -22,31 +22,40 @@ class ShopFragment : Fragment() {
         val btn5 = view.findViewById<Button>(R.id.btn5)
         val btn10 = view.findViewById<Button>(R.id.btn10)
         val btn25 = view.findViewById<Button>(R.id.btn25)
-        val btn50 = view.findViewById<Button>(R.id.btn50)
-        val btn100 = view.findViewById<Button>(R.id.btn100)
-        var diamonds = view.findViewById<TextView>(R.id.myDiamonds)
-        diamonds.text = TestData().companion.getDiamonds().toString()
+        val keybtn1 = view.findViewById<Button>(R.id.keybtn1)
+        val keybtn5 = view.findViewById<Button>(R.id.keybtn5)
+        val keybtn10 = view.findViewById<Button>(R.id.keybtn10)
+        val keybtn25 = view.findViewById<Button>(R.id.keybtn25)
 
         btn1.setOnClickListener{
-            TestData().companion.buyDiamonds(1)
+            TestData().companion.buy("diamonds",1)
             it.invalidate()
         }
         btn5.setOnClickListener{
-            TestData().companion.buyDiamonds(5)
+            TestData().companion.buy("diamonds",5)
             it.refreshDrawableState()
         }
         btn10.setOnClickListener{
-            TestData().companion.buyDiamonds(10)
+            TestData().companion.buy("diamonds",10)
             it.requestLayout()
         }
         btn25.setOnClickListener{
-            TestData().companion.buyDiamonds(25)
+            TestData().companion.buy("diamonds",25)
         }
-        btn50.setOnClickListener{
-            TestData().companion.buyDiamonds(50)
+        keybtn1.setOnClickListener{
+            TestData().companion.buy("keys",1)
+            it.invalidate()
         }
-        btn100.setOnClickListener{
-            TestData().companion.buyDiamonds(100)
+        keybtn5.setOnClickListener{
+            TestData().companion.buy("keys",5)
+            it.refreshDrawableState()
+        }
+        keybtn10.setOnClickListener{
+            TestData().companion.buy("keys",10)
+            it.requestLayout()
+        }
+        keybtn25.setOnClickListener{
+            TestData().companion.buy("keys",25)
         }
         return view
     }

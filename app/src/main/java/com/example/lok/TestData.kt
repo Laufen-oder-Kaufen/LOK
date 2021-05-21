@@ -36,6 +36,7 @@ class TestData {
         )
 
         private var diamonds = 0
+        private var keys = 0
 
         var nullHero = Hero("NULL", 0, "W", "C", 0, 0, 0, 0, 0, 0, 0, nullIcon, nullIcon, 0)
         var nullEnemy = Monster("NULL", 0, "W", "C", 0, 0, 0, 0, 0, 0, 0, nullIcon, nullIcon)
@@ -57,9 +58,6 @@ class TestData {
         var lowGoblin = Monster("Lower Goblin", 101, "W","1",20,10,0,10,0,10,5, images.get(12), images.get(12))
         var lowSkelMage = Monster ("Lower Skeleton Mage", 102, "M", "1", 15,0,10,5,10,5,3,images.get(9), images.get(9))
         var Bat = Monster("Lower Bat", 103, "A", "1", 15,8,0,5,5,8,8,images.get(14), images.get(14))
-
-
-
 
         var Dagger = Item(901, "Dagger", itemImages[0], itemImages[0], "C")
         val MagicDagger = Item(902, "Magical Dagger", itemImages[1], itemImages[1], "U")
@@ -86,8 +84,6 @@ class TestData {
         var UrumeiusItem = Item(806, "Urumeius", images.get(5), images.get(5), "U")
 
 
-
-
         val itemList = arrayListOf<Item>(Dagger, MagicPotion, Helmet1, Chest1, Shoes1, Gloves1, Legs1, RevPotion, LvlPotion, MagicDagger, DeathDagger, Helmet2, Chest2, Shoes2,
             Gloves2, Legs2, ClaudeItem, CliveItem, ClaudiaItem,UlfredItem, UsherItem, UrumeiusItem )
         val gachaCommonLootList = arrayListOf<Item>(Dagger, MagicPotion, Helmet1, Chest1, Shoes1, Gloves1, Legs1, ClaudeItem, CliveItem, ClaudiaItem)
@@ -102,16 +98,28 @@ class TestData {
         val Player = PlayerData(1, "Tobias Test")
 
 
-        fun buyDiamonds(amount: Int) {
-            diamonds += amount
+        fun buy(stuff: String, amount: Int) {
+            if(stuff == "diamonds"){
+                diamonds += amount
+            }else{
+                keys += amount
+            }
         }
 
-        fun spentDiamonds(amount: Int) {
-            diamonds -= amount
+        fun spent(stuff: String, amount: Int) {
+            if(stuff == "diamonds"){
+                diamonds -= amount
+            }else{
+                keys -= amount
+            }
         }
 
         fun getDiamonds(): Int {
             return diamonds
+        }
+
+        fun getKeys(): Int {
+            return keys
         }
 
         fun getHero(heroId: Int): Hero {

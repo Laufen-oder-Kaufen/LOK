@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.GridView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.lok.R
+import com.example.lok.TestData
 import com.example.lok.ui.adapter.ItemAdapter
 
 class ItemFragment : Fragment(){
@@ -59,6 +61,10 @@ class ItemFragment : Fragment(){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.item_fragment, container, false)
         val itemGridView = view.findViewById<GridView>(R.id.itemGridView)
+        val diamonds = view.findViewById<TextView>(R.id.dmnd_count)
+        val keys = view.findViewById<TextView>(R.id.key_count)
+        diamonds.text = TestData().companion.getDiamonds().toString()
+        keys.text = TestData().companion.getKeys().toString()
         itemGridView.adapter = ItemAdapter(requireContext())
         return view
     }
