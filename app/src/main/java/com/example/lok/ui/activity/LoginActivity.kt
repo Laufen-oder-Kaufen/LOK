@@ -37,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
                 // optional default is GET
                 requestMethod = "POST"
 
-                val wr = OutputStreamWriter(getOutputStream());
+                val wr = OutputStreamWriter(outputStream);
                 wr.write(reqParam);
                 wr.flush();
 
