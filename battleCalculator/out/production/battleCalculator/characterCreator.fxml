@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="characterCreatorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="399.0" prefWidth="454.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="characterCreationController">
+
+
+      <Button id="Create Hero" layoutX="328.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleCreate" prefHeight="26.0" prefWidth="116.0" text="Create" />
+      <TextField fx:id="labelName" layoutX="151.0" layoutY="26.0" />
+
+      <Label layoutX="30.0" layoutY="30.0" text="Name" />
+      <Label layoutX="34.0" layoutY="63.0" prefHeight="17.0" prefWidth="24.0" text="HP" />
+      <Label layoutX="31.0" layoutY="97.0" text="Strength" />
+      <Label layoutX="30.0" layoutY="131.0" text="Magic" />
+      <Label layoutX="32.0" layoutY="167.0" text="Defense" />
+      <Label layoutX="30.0" layoutY="201.0" text="Magic Defense" />
+      <Label layoutX="29.0" layoutY="233.0" text="Agility" />
+      <Label layoutX="33.0" layoutY="270.0" text="Luck" />
+      <Button fx:id="buttonCalculatePower" layoutX="19.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleCalculate" text="Calculate Power" />
+      <TextField fx:id="labelHP" layoutX="151.0" layoutY="59.0" />
+      <TextField fx:id="labelStrength" layoutX="151.0" layoutY="93.0" />
+      <TextField fx:id="labelMagic" layoutX="151.0" layoutY="127.0" />
+      <TextField fx:id="labelDefense" layoutX="151.0" layoutY="163.0" />
+      <TextField fx:id="labelMDefense" layoutX="151.0" layoutY="197.0" />
+      <TextField fx:id="labelAgility" layoutX="151.0" layoutY="229.0" />
+      <TextField fx:id="labelLuck" layoutX="151.0" layoutY="266.0" />
+      <CheckBox fx:id="checkMage" layoutX="28.0" layoutY="315.0" mnemonicParsing="false" text="Mage" />
+      <CheckBox fx:id="checkWarrior" layoutX="120.0" layoutY="315.0" mnemonicParsing="false" text="Warrior" />
+      <CheckBox fx:id="checkArcher" layoutX="220.0" layoutY="315.0" mnemonicParsing="false" text="Archer" />
+      <CheckBox fx:id="checkHealer" layoutX="300.0" layoutY="315.0" mnemonicParsing="false" text="Healer" />
+      <TextField fx:id="power" layoutX="151.0" layoutY="361.0" prefHeight="25.0" prefWidth="60.0" />
+      <TextField fx:id="labelRarity" layoutX="237.0" layoutY="360.0" prefHeight="26.0" prefWidth="60.0" promptText="Rarity" />
+   <CheckBox fx:id="checkEnemy" layoutX="383.0" layoutY="315.0" mnemonicParsing="false" text="Enemy" />
+
+    </AnchorPane>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="characterCreatorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="454.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="battleArenaController">
+            <ComboBox fx:id="cbh1" layoutX="4.0" layoutY="75.0" prefWidth="150.0" promptText="Hero 1" />
+            <TextField fx:id="txtHero1Level" layoutX="160.0" layoutY="75.0" promptText="Level" maxWidth="60"/>
+            <ComboBox fx:id="cbh2" layoutX="4.0" layoutY="118.0" prefWidth="150.0" promptText="Hero 2"  />
+            <TextField fx:id="txtHero2Level" layoutX="160.0" layoutY="118.0" promptText="Level" maxWidth="60"/>
+            <ComboBox fx:id="cbh3" layoutX="4.0" layoutY="164.0" prefWidth="150.0" promptText="Hero 3" />
+            <TextField fx:id="txtHero3Level" layoutX="160.0" layoutY="164.0" promptText="Level" maxWidth="60"/>
+            <ComboBox fx:id="cbe1" layoutX="230.0" layoutY="75.0" prefWidth="150.0" promptText="Enemy 1" />
+            <TextField fx:id="txtEnemy1Level" layoutX="385.0" layoutY="75.0" promptText="Level" maxWidth="60"/>
+            <ComboBox fx:id="cbe2" layoutX="230.0" layoutY="118.0" prefWidth="150.0" promptText="Enemy 2" />
+             <TextField fx:id="txtEnemy2Level" layoutX="385.0" layoutY="118.0" promptText="Level" maxWidth="60"/>
+            <ComboBox fx:id="cbe3" layoutX="230.0" layoutY="164.0" prefWidth="150.0" promptText="Enemy3" />
+            <TextField fx:id="txtEnemy3Level" layoutX="385.0" layoutY="164.0" promptText="Level" maxWidth="60"/>
+            <Button fx:id="btnFight" layoutX="160.0" layoutY="220.0" mnemonicParsing="false" text="Fight" onAction="#handleFight" />
+    </AnchorPane>
